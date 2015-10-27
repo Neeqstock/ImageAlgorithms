@@ -1,0 +1,30 @@
+### Tasklist
+
+uso:
+X dentro al quadrato quando il task è terminato
+T davanti al quadrato quando TOM si è preso in carico il lavoro
+N davanti al quadrato quando NICK si è preso in carico il lavoro
+
+Struttura del progetto:
+
+§ Interfaccia grafica
+	[] Selettore di file in input (Java File Picker o come si chiama lui)
+	[] Una lista per vedere che file abbiamo selezionato
+	[] Selettore di filtri, noise e altre schifezze da applicare su tutti i file selezionati
+	[] Possibilità di selezionare quante volte applicare ogni singolo filtro
+	[] Una volta premuto sul tasto DO!, salva in una sottocartella le immagini elaborate
+	
+§ Filtri e noise
+	[] DoG
+	[] Sobel
+	
+	[] Salt and pepper noise
+	[] Gaussian noise
+
+§ Classi e funzioni da realizzare
+	[] Kernel
+	[] Convoluzione
+	
+@ Teoria
+	[] Trovare tutti i kernel che ci servono
+	[] Trovare tutti gli algoritmi dei vari noise
