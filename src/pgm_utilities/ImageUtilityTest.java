@@ -1,10 +1,11 @@
-package pgmutilities;
+package pgm_utilities;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import pgmutilities.PgmUtilities;
-import pgmutilities.PGM;
+
+import pgm_utilities.PGM;
+import pgm_utilities.PgmUtilities;
 
 /**
  *

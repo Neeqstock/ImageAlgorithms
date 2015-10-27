@@ -27,14 +27,14 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	[] Roberts (kernel 2x2)
 	[] Isotropic		[-1 0 1; -sqrt2 0 sqrt2; -1 0 1] anche verticale
 	[] DoG (teoria su matlab) (dimensione del kernel: 6 volte la varianza massima)
-	X  Laplace
 	[] Canny
-	X  Kirsh
-	X  Compass
 	[] Median
 	[] Rank
 	[] Nagao-Matsuyama
-		
+	NO Kirsh
+	NO Compass		
+	NO Laplace
+	
 	[] Salt and pepper noise
 	[] Gaussian noise
 	[] Impulse noise
@@ -47,7 +47,7 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	[] Estrazione modulo e fase
 	
 @ Teoria
-	[X] Trovare tutti i kernel che ci servono
+	[] Trovare tutti i kernel che ci servono
 	[] Trovare tutti gli algoritmi dei vari noise
 	
 _ Objectives

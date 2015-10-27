@@ -1,4 +1,4 @@
-package pgmutilities;
+package pgm_utilities;
 
 /**
  *
