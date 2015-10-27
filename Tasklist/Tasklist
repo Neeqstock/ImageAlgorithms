@@ -1,11 +1,11 @@
 ### Tasklist
 
-uso:
+================================================================
+Legenda:
 X dentro al quadrato quando il task è terminato
 T davanti al quadrato quando TOM si è preso in carico il lavoro
 N davanti al quadrato quando NICK si è preso in carico il lavoro
-
-Struttura del progetto:
+================================================================
 
 § Interfaccia grafica
 	[] Selettore di file in input (Java File Picker o come si chiama lui)
@@ -15,16 +15,48 @@ Struttura del progetto:
 	[] Una volta premuto sul tasto DO!, salva in una sottocartella le immagini elaborate
 	
 § Filtri e noise
-	[] DoG
-	[] Sobel
-	
+	[] Box filter	1/9 [1 1 1; 1 1 1; 1 1 1]
+	[] Prewitt		[-1 0 1; -1 0 1; -1 0 1] anche verticale
+	[] Sharpening	[0 0 0; 0 2 0; 0 0 0] - Box filter
+	[] Sobel orizz.		[1 0 -1; 2 0 -2; 1 0 -1]
+	[] Sobel verticale	[1 2 1; 0 0 0; -1 -2 -1]
+	[] Gaussiano		(valori da guardare slide pag 39)
+	[] 3/9
+	?  Normalizzazione
+	?  Equalizzazione
+	?  Roberts (kernel 2x2)
+	?  Isotropic		[-1 0 1; -sqrt2 0 sqrt2; -1 0 1] anche verticale
+	?  DoG (teoria su matlab)
+	?  Laplace
+	?  Canny
+	?  Kirsh
+	?  Compass
+	?  Median
+	?  Rank
+	?  Nagao-Matsuyama
+		
 	[] Salt and pepper noise
 	[] Gaussian noise
+	[] Impulse noise
+	[] Uniform noise
 
 § Classi e funzioni da realizzare
 	[] Kernel
 	[] Convoluzione
+	[] Possibilità di sommare e mischiare filtri
+	?  Estrazione modulo e fase
 	
 @ Teoria
-	[] Trovare tutti i kernel che ci servono
+	[X] Trovare tutti i kernel che ci servono
 	[] Trovare tutti gli algoritmi dei vari noise
+	
+_ Objectives
+	[] Write a HTML report (or with Word)
+		[] Comments with implemented theory
+		[] Comments on the efficiency, precision, computation time, comparison with olternative solutions, etc.
+	[] Annotated source code
+
+. Parameters:
+	clearness
+	completeness
+	results and related discussions
