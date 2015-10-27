@@ -22,18 +22,18 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	[] Sobel verticale	[1 2 1; 0 0 0; -1 -2 -1]
 	[] Gaussiano		(valori da guardare slide pag 39)
 	[] 3/9
-	?  Normalizzazione
-	?  Equalizzazione
-	?  Roberts (kernel 2x2)
-	?  Isotropic		[-1 0 1; -sqrt2 0 sqrt2; -1 0 1] anche verticale
-	?  DoG (teoria su matlab)
-	?  Laplace
-	?  Canny
-	?  Kirsh
-	?  Compass
-	?  Median
-	?  Rank
-	?  Nagao-Matsuyama
+	[] Normalizzazione
+	[] Equalizzazione
+	[] Roberts (kernel 2x2)
+	[] Isotropic		[-1 0 1; -sqrt2 0 sqrt2; -1 0 1] anche verticale
+	[] DoG (teoria su matlab) (dimensione del kernel: 6 volte la varianza massima)
+	X  Laplace
+	[] Canny
+	X  Kirsh
+	X  Compass
+	[] Median
+	[] Rank
+	[] Nagao-Matsuyama
 		
 	[] Salt and pepper noise
 	[] Gaussian noise
@@ -44,7 +44,7 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	[] Kernel
 	[] Convoluzione
 	[] Possibilità di sommare e mischiare filtri
-	?  Estrazione modulo e fase
+	[] Estrazione modulo e fase
 	
 @ Teoria
 	[X] Trovare tutti i kernel che ci servono
@@ -60,3 +60,4 @@ _ Objectives
 	clearness
 	completeness
 	results and related discussions
+	
