@@ -73,7 +73,7 @@ public class PgmUtilities
     //---------------------------------------------------------//
     //--------- Read Pixels From Different FileType -----------//
     //---------------------------------------------------------// 
-    PGM readPGM(String filename)
+    public PGM readPGM(String filename)
     {
         int width, height, max_val;
         boolean binary;
