@@ -18,26 +18,32 @@ public class filterUtilities {
 			return conv;
 	}
 	
+	public void mapping(int[] convoluted, int rows, int columns){
+		for (int i = 0; i < convoluted.length; i++) {
+			convoluted[i] = 0; // ?
+		}
+	}
+	
 	/** 3X3 matrix convolution */ 
 	public int[] TotalConvolution3(int[]kernel, int[] img, int rows, int columns){
 		
 		// -1, a causa del bordo 
 		int[] convoluteImage = new int[img.length];
-		
+				
 		for (int i = 1; i < rows-1; i++) {
 			for (int j = 1; j < columns-1; j++) {
 				
 				int[] kernelledImage = new int[kernel.length];
 				
-				kernelledImage[0] = img[(i-1)*rows + (j-1)];
-				kernelledImage[1] = img[(i-1)*rows + (j  )];
-				kernelledImage[2] = img[(i-1)*rows + (j+1)];
-				kernelledImage[3] = img[(i  )*rows + (j-1)];
-				kernelledImage[4] = img[(i  )*rows + (j  )];
-				kernelledImage[5] = img[(i  )*rows + (j+1)];
-				kernelledImage[6] = img[(i+1)*rows + (j-1)];
-				kernelledImage[7] = img[(i+1)*rows + (j  )];
-				kernelledImage[8] = img[(i+1)*rows + (j+1)];
+				kernelledImage[0] = img[(i-1) + (j-1)*rows];
+				kernelledImage[1] = img[(i-1) + ( j )*rows];
+				kernelledImage[2] = img[(i-1) + (j+1)*rows];
+				kernelledImage[3] = img[( i ) + (j-1)*rows];
+				kernelledImage[4] = img[( i ) + ( j )*rows];
+				kernelledImage[5] = img[( i ) + (j+1)*rows];
+				kernelledImage[6] = img[(i+1) + (j-1)*rows];
+				kernelledImage[7] = img[(i+1) + ( j )*rows];
+				kernelledImage[8] = img[(i+1) + (j+1)*rows];
 				
 				convoluteImage[i] = convolution(kernel, kernelledImage);
 			}
