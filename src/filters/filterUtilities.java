@@ -29,15 +29,15 @@ public class filterUtilities {
 				
 				int[] kernelledImage = new int[kernel.length];
 				
-				kernelledImage[0] = img[(i-1)*rows + (j-1)*columns];
-				kernelledImage[1] = img[(i-1)*rows + (j  )*columns];
-				kernelledImage[2] = img[(i-1)*rows + (j+1)*columns];
-				kernelledImage[3] = img[(i  )*rows + (j-1)*columns];
-				kernelledImage[4] = img[(i  )*rows + (j  )*columns];
-				kernelledImage[5] = img[(i  )*rows + (j+1)*columns];
-				kernelledImage[6] = img[(i+1)*rows + (j-1)*columns];
-				kernelledImage[7] = img[(i+1)*rows + (j  )*columns];
-				kernelledImage[8] = img[(i+1)*rows + (j+1)*columns];
+				kernelledImage[0] = img[(i-1)*rows + (j-1)];
+				kernelledImage[1] = img[(i-1)*rows + (j  )];
+				kernelledImage[2] = img[(i-1)*rows + (j+1)];
+				kernelledImage[3] = img[(i  )*rows + (j-1)];
+				kernelledImage[4] = img[(i  )*rows + (j  )];
+				kernelledImage[5] = img[(i  )*rows + (j+1)];
+				kernelledImage[6] = img[(i+1)*rows + (j-1)];
+				kernelledImage[7] = img[(i+1)*rows + (j  )];
+				kernelledImage[8] = img[(i+1)*rows + (j+1)];
 				
 				convoluteImage[i] = convolution(kernel, kernelledImage);
 			}
