@@ -105,4 +105,24 @@ public class filterUtilities {
 		return convoluteImage;
 	}
 	
+	public int[] toIntArray(double[] inputArray){
+		int[] output = new int[inputArray.length];
+		
+		for (int i = 0; i < output.length; i++) {
+			output[i] = (int)inputArray[i];
+		}
+		
+		return output;
+	}
+	
+	public double[] toDoubleArray(int[] inputArray){
+		double[] output = new double[inputArray.length];
+
+		for (int i = 0; i < output.length; i++) {
+			output[i] = (double)inputArray[i];
+		}
+		
+		return output;
+	}
+	
 }

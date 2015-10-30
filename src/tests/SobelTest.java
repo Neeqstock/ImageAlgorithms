@@ -1,5 +1,6 @@
-package filters;
+package tests;
 
+import filters.filterUtilities;
 import pgm_utilities.PGM;
 import pgm_utilities.PgmUtilities;
 

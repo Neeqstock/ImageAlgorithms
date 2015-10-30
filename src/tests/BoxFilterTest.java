@@ -1,7 +1,7 @@
-package filters;
+package tests;
+import filters.filterUtilities;
 import pgm_utilities.PGM;
 import pgm_utilities.PgmUtilities;
-
 
 public class BoxFilterTest {
 
@@ -17,17 +17,11 @@ public class BoxFilterTest {
 			double[] box = {boxValue,boxValue,boxValue,boxValue,boxValue,boxValue,boxValue,boxValue,boxValue};
 			
 			double[] Gx = fu.TotalConvolution3(box, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
-
-			int[] pixOut = new int[Gx.length];
-					
-			for (int i = 0; i < Gx.length; i++) {
-				pixOut[i] = (int)Gx[i]; 
-			}
+			int[] pixOut = fu.toIntArray(Gx);
 			
 			PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
 			imgOut.setPixels(pixOut);	
 			pgmUtil.writePGM(imgOut, "testResults/BoxFiltered.pgm");
 			
 	}
-
 }
