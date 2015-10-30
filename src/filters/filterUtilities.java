@@ -18,10 +18,18 @@ public class filterUtilities {
 			return conv;
 	}
 	
-	public void mapping(int[] convoluted, int rows, int columns){
-		for (int i = 0; i < convoluted.length; i++) {
-			convoluted[i] = 0; // ?
+	public int[] mapping(double[] convoluted, double max, double min){
+		int[] output = new int[convoluted.length];
+		double outputMax = 255;
+		double outputMin = 0;
+			
+		// output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
+		for (int i = 0; i < output.length; i++) {
+			double tmp = ((outputMax - outputMin)/ (max - min)) * (convoluted[i] - min);			
+			output[i] = (int) tmp;
 		}
+		
+		return output;
 	}
 	
 	/** 3X3 matrix convolution */ 
@@ -29,23 +37,23 @@ public class filterUtilities {
 		
 		// -1, a causa del bordo 
 		int[] convoluteImage = new int[img.length];
-				
+						
 		for (int i = 1; i < rows-1; i++) {
 			for (int j = 1; j < columns-1; j++) {
 				
 				int[] kernelledImage = new int[kernel.length];
 				
-				kernelledImage[0] = img[(i-1) + (j-1)*rows];
-				kernelledImage[1] = img[(i-1) + ( j )*rows];
-				kernelledImage[2] = img[(i-1) + (j+1)*rows];
-				kernelledImage[3] = img[( i ) + (j-1)*rows];
-				kernelledImage[4] = img[( i ) + ( j )*rows];
-				kernelledImage[5] = img[( i ) + (j+1)*rows];
-				kernelledImage[6] = img[(i+1) + (j-1)*rows];
-				kernelledImage[7] = img[(i+1) + ( j )*rows];
-				kernelledImage[8] = img[(i+1) + (j+1)*rows];
+				kernelledImage[0] = img[(i-1)*columns + (j-1)];
+				kernelledImage[3] = img[(i-1)*columns + ( j )];
+				kernelledImage[6] = img[(i-1)*columns + (j+1)];
+				kernelledImage[1] = img[( i )*columns + (j-1)];
+				kernelledImage[4] = img[( i )*columns + ( j )];
+				kernelledImage[7] = img[( i )*columns + (j+1)];
+				kernelledImage[2] = img[(i+1)*columns + (j-1)];
+				kernelledImage[5] = img[(i+1)*columns + ( j )];
+				kernelledImage[8] = img[(i+1)*columns + (j+1)];
 				
-				convoluteImage[i] = convolution(kernel, kernelledImage);
+				convoluteImage[i*columns + j] = convolution(kernel, kernelledImage);
 			}
 		}
 		return convoluteImage;

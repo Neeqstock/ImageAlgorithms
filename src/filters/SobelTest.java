@@ -15,17 +15,49 @@ public class SobelTest {
 			filterUtilities fu = new filterUtilities();
 						
 			int[] HorizSobel = {-1,0,1,-2,0,2,-1,0,1};
+			int[] VertiSobel = {-1,-2,-1,0,0,0,1,2,1};
 					
-			PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
-			int[] pix = fu.TotalConvolution3(HorizSobel, imgIn.getPixels(),imgIn.getWidth(),imgIn.getHeight());
-			fu.mapping(pix, imgIn.getWidth(), imgIn.getHeight());
-			imgOut.setPixels(pix);	
-			pgmUtil.writePGM(imgOut, "img/SobelHori.pgm");
-
-	//		int[] VertSobel = {-1,-2,-1,0,0,0,1,2,1};
+			int[] Gx = fu.TotalConvolution3(HorizSobel, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
+			int[] Gy = fu.TotalConvolution3(VertiSobel, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
+						
+			double[] pix = new double[Gx.length];
+			double[] pixPhase = new double[Gx.length];
 			
-	//		pgmUtil.resetPGM(imgOut);
-	//		imgOut.setPixels(fu.TotalConvolution3(VertSobel, imgIn.getPixels(),imgIn.getWidth(),imgIn.getHeight()));
-	//		pgmUtil.writePGM(imgOut, "img/SobelVert.pgm");
+			for (int i = 0; i < Gx.length; i++) {
+				pix[i] = Math.sqrt((double)(Gx[i]*Gx[i])+(Gy[i]*Gy[i]));
+				pixPhase[i] = Math.atan2(Gy[i],Gx[i]);
+			}
+			
+			double minMod = pix[0];
+			double maxMod = pix[0];
+			double minPha = pixPhase[0];
+			double maxPha = pixPhase[0];
+			
+			for (int i = 0; i < pix.length; i++) {
+				if(pix[i] < minMod){
+					minMod = pix[i];
+				}
+				if(pix[i] > maxMod){
+					maxMod = pix[i];
+				}
+				if(pixPhase[i] < minPha){
+					minPha = pixPhase[i];
+				}
+				if(pixPhase[i] > maxPha){
+					maxPha = pixPhase[i];
+				}
+			}
+			
+			int[] pixoutMod =  fu.mapping(pix, maxMod, minMod);
+			int[] pixoutPha =  fu.mapping(pixPhase, maxPha, minPha);
+			
+			
+			PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
+			imgOut.setPixels(pixoutMod);	
+			pgmUtil.writePGM(imgOut, "img/SobelModul.pgm");
+			
+			pgmUtil.resetPGM(imgOut);
+			imgOut.setPixels(pixoutPha);
+			pgmUtil.writePGM(imgOut, "img/SobelPhase.pgm");
 	}
 }
