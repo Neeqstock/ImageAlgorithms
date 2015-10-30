@@ -8,17 +8,17 @@ public class SobelTest {
 	public static void main(String[] args) {
 		    PgmUtilities pgmUtil = new PgmUtilities();
 			PGM imgIn = pgmUtil.readPGM("img/estate.pgm");
-
+			
 			if(imgIn == null)
 		       return;
 			
 			filterUtilities fu = new filterUtilities();
 						
-			int[] HorizSobel = {-1,0,1,-2,0,2,-1,0,1};
-			int[] VertiSobel = {-1,-2,-1,0,0,0,1,2,1};
+			double[] HorizSobel = {-1,0,1,-2,0,2,-1,0,1};
+			double[] VertiSobel = {-1,-2,-1,0,0,0,1,2,1};
 					
-			int[] Gx = fu.TotalConvolution3(HorizSobel, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
-			int[] Gy = fu.TotalConvolution3(VertiSobel, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
+			double[] Gx = fu.TotalConvolution3(HorizSobel, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
+			double[] Gy = fu.TotalConvolution3(VertiSobel, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
 						
 			double[] pix = new double[Gx.length];
 			double[] pixPhase = new double[Gx.length];
@@ -54,10 +54,10 @@ public class SobelTest {
 			
 			PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
 			imgOut.setPixels(pixoutMod);	
-			pgmUtil.writePGM(imgOut, "img/SobelModul.pgm");
+			pgmUtil.writePGM(imgOut, "testResults/SobelModul.pgm");
 			
 			pgmUtil.resetPGM(imgOut);
 			imgOut.setPixels(pixoutPha);
-			pgmUtil.writePGM(imgOut, "img/SobelPhase.pgm");
+			pgmUtil.writePGM(imgOut, "testResults/SobelPhase.pgm");
 	}
 }
