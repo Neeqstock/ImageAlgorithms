@@ -63,6 +63,14 @@ public class noiseUtilities {
 		for (int i = 0; i < out.length; i++) {
 			double noise = 2*k*(rnd.nextDouble() - 0.5);
 			out[i] = out[i] + (int)noise;
+			
+			if (out[i] > 255) {
+				out[i] = 255;
+			}
+			
+			if (out[i] < 0) {
+				out[i] = 0;
+			}
 		}
 		return img;
 	}
