@@ -215,7 +215,7 @@ public class PgmUtilities
                 out.write(pgm.getPixels()[i] + "\n");
             }	
 
-            System.out.println("\nImage correctly writed");
+            System.out.println("\nImage correctly written");
 
             // Ok close the file
             out.close();
