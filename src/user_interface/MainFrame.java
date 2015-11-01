@@ -114,11 +114,11 @@ public class MainFrame extends JFrame {
 		JPanel twoButtons = new JPanel();
 		panel_2.add(twoButtons);
 		
-		JList<String> fileList = new JList<String>();
+		final JList<String> fileList = new JList<String>();
 		fileList.setBounds(0, 36, 378, 175);
 		panel_2.add(fileList);
 		
-		DefaultListModel<String> listModel = new DefaultListModel<String>();
+		final DefaultListModel<String> listModel = new DefaultListModel<String>();
 		fileList.setModel(listModel);
 		
 		JButton btnPickAPgm = new JButton("Pick a PGM image");

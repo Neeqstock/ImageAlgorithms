@@ -20,7 +20,7 @@ public class FileSelectionPanel extends JPanel {
 	private JList visualList = new JList();
 	private DefaultListModel<String> listModel = new DefaultListModel<String>();
 	
-	public FileSelectionPanel(JFrame frame) {
+	public FileSelectionPanel(final JFrame frame) {
 		super();
 		
 		setLayout(new CardLayout());
