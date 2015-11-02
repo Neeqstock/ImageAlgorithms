@@ -1,13 +1,13 @@
 package tests;
 import filters.filterUtilities;
-import pgm_utilities.PGM;
-import pgm_utilities.PgmUtilities;
+import pgm_utilities.PGMImage;
+import pgm_utilities.PGMUtilities;
 
 public class BoxFilterTest {
 
 	public static void main(String[] args) {
-		 PgmUtilities pgmUtil = new PgmUtilities();
-			PGM imgIn = pgmUtil.readPGM("img/piante.pgm");
+		 PGMUtilities pgmUtil = new PGMUtilities();
+			PGMImage imgIn = pgmUtil.readPGM("img/piante.pgm");
 
 			if(imgIn == null)
 		       return;
@@ -19,7 +19,7 @@ public class BoxFilterTest {
 			double[] Gx = fu.TotalConvolution3(box, imgIn.getPixels(),imgIn.getHeight(),imgIn.getWidth());
 			int[] pixOut = fu.toIntArray(Gx);
 			
-			PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
+			PGMImage imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
 			imgOut.setPixels(pixOut);	
 			pgmUtil.writePGM(imgOut, "testResults/BoxFiltered.pgm");
 			

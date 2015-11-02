@@ -15,6 +15,8 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	[] Una volta premuto sul tasto DO!, salva in una sottocartella le immagini elaborate
 	
 § Filtri e noise
+
+
 	[] Box filter		1/9 [1 1 1; 1 1 1; 1 1 1]
 	[] Prewitt			[-1 0 1; -1 0 1; -1 0 1] anche verticale
 	[] Sharpening		[0 0 0; 0 2 0; 0 0 0] - Box filter
@@ -60,4 +62,3 @@ _ Objectives
 	clearness
 	completeness
 	results and related discussions
-	

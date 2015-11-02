@@ -11,16 +11,17 @@ import java.util.StringTokenizer;
  *
  * @author user
  */
-public class PgmUtilities 
+public class PGMUtilities 
 {
-	static int numLines = 0;
+	private static int numLines = 0;
+	public static final String standardOutputPath = "output/";
 	
     //---------------------------------------------------------// 
     //------------- Create a new empty pgm image --------------//
     //---------------------------------------------------------// 
-    public PGM newPGM(int width, int height, int max_val)
+    public static PGMImage newPGM(int width, int height, int max_val)
     {
-        return new PGM(width, height, max_val);
+        return new PGMImage(width, height, max_val);
     }
     
    
@@ -35,7 +36,7 @@ public class PgmUtilities
     //-------------------------------------------------------//
     //--------------- Skip Commented Lines ------------------//
     //-------------------------------------------------------// 
-    public String skipComments(BufferedReader br) throws IOException
+    public static String skipComments(BufferedReader br) throws IOException
     {
         boolean loop = true;
         String buffer = br.readLine();
@@ -57,7 +58,7 @@ public class PgmUtilities
     //---------------------------------------------------------// 
     //------- Set to zero all the pixels of a pgm image -------//
     //---------------------------------------------------------// 
-    public void resetPGM(PGM pgm)
+    public static void resetPGM(PGMImage pgm)
     {
         int width = pgm.getWidth();
         int height = pgm.getHeight();
@@ -73,12 +74,12 @@ public class PgmUtilities
     //---------------------------------------------------------//
     //--------- Read Pixels From Different FileType -----------//
     //---------------------------------------------------------// 
-    public PGM readPGM(String filename)
+    public static PGMImage readPGM(String filename)
     {
         int width, height, max_val;
         boolean binary;
         
-        PGM pgm;
+        PGMImage pgm;
         numLines = 3; // default number of lines of header
         
         try 
@@ -189,7 +190,7 @@ public class PgmUtilities
     //---------------------------------------------------------//
     //--- Write Pixels inside images for Different FileType ---//
     //---------------------------------------------------------// 
-    public void writePGM(PGM pgm, String filename)
+    public static void writePGM(PGMImage pgm, String filename)
     {
         if(pgm == null)
         {
@@ -233,7 +234,7 @@ public class PgmUtilities
     //----- Invert Pixels GrayScale value inside images -----//
     //--------------- for Different FileType ----------------//
     //-------------------------------------------------------// 
-    public PGM invertPGM(PGM pgmIn)
+    public static PGMImage invertPGM(PGMImage pgmIn)
     {	
         if(pgmIn == null)
         {
@@ -241,7 +242,7 @@ public class PgmUtilities
             return null;
         }
 
-    	PGM pgmOut = new PGM(pgmIn.getWidth(), pgmIn.getHeight(), pgmIn.getMax_val());
+    	PGMImage pgmOut = new PGMImage(pgmIn.getWidth(), pgmIn.getHeight(), pgmIn.getMax_val());
         int i, inv;
         int max = pgmIn.getMax_val();
         int width = pgmIn.getWidth();
@@ -261,7 +262,7 @@ public class PgmUtilities
     //-------------------------------------------------------//
     //---------------- Flip Image Horizontally --------------//
     //-------------------------------------------------------// 
-    public PGM hflipPGM(PGM pgmIn)
+    public static PGMImage hflipPGM(PGMImage pgmIn)
     {	
         if(pgmIn == null)
         {
@@ -269,7 +270,7 @@ public class PgmUtilities
             return null;
         }
         
-    	PGM pgmOut = new PGM(pgmIn.getWidth(), pgmIn.getHeight(), pgmIn.getMax_val());
+    	PGMImage pgmOut = new PGMImage(pgmIn.getWidth(), pgmIn.getHeight(), pgmIn.getMax_val());
 
         int i, j;
         int hfp;
@@ -299,14 +300,14 @@ public class PgmUtilities
     //-------------------------------------------------------//
     //------------------ Copy a PGM Image -------------------//
     //-------------------------------------------------------// 
-    public PGM copyPGM(PGM pgmIn)
+    public static PGMImage copyPGM(PGMImage pgmIn)
     {		
         if(pgmIn == null)
         {
             System.err.println("Error! No input data. Please Check.");
             return null;
         }
-    	PGM pgmOut = new PGM(pgmIn.getWidth(), pgmIn.getHeight(), pgmIn.getMax_val());
+    	PGMImage pgmOut = new PGMImage(pgmIn.getWidth(), pgmIn.getHeight(), pgmIn.getMax_val());
 
         int i;
 
@@ -331,7 +332,7 @@ public class PgmUtilities
     //--------------------------------------------------------//
     //------------------ Calculate Histogram -----------------//
     //--------------------------------------------------------// 
-    public int[] histogramPGM(PGM pgm)
+    public static int[] histogramPGM(PGMImage pgm)
     {
         if(pgm == null)
         {

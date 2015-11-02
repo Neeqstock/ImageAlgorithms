@@ -1,14 +1,14 @@
 package tests;
 
 import filters.filterUtilities;
-import pgm_utilities.PGM;
-import pgm_utilities.PgmUtilities;
+import pgm_utilities.PGMImage;
+import pgm_utilities.PGMUtilities;
 
 public class SobelTest {
 
 	public static void main(String[] args) {
-		    PgmUtilities pgmUtil = new PgmUtilities();
-			PGM imgIn = pgmUtil.readPGM("img/estate.pgm");
+		    PGMUtilities pgmUtil = new PGMUtilities();
+			PGMImage imgIn = pgmUtil.readPGM("img/estate.pgm");
 			
 			if(imgIn == null)
 		       return;
@@ -53,7 +53,7 @@ public class SobelTest {
 			int[] pixoutPha =  fu.mapping(pixPhase, maxPha, minPha);
 			
 			
-			PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
+			PGMImage imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
 			imgOut.setPixels(pixoutMod);	
 			pgmUtil.writePGM(imgOut, "testResults/SobelModul.pgm");
 			

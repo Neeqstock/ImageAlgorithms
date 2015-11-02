@@ -4,14 +4,14 @@ package pgm_utilities;
  *
  * @author user
  */
-public class PGM
+public class PGMImage
 {
   private int width;
   private int height;
   private int max_val;
   private int[] pixels;
 
-  public PGM(int width, int height, int max_val)
+  public PGMImage(int width, int height, int max_val)
   {
       this.width = width;
       this.height = height;

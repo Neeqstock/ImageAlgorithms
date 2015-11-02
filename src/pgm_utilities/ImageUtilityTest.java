@@ -4,8 +4,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import pgm_utilities.PGM;
-import pgm_utilities.PgmUtilities;
+import pgm_utilities.PGMImage;
+import pgm_utilities.PGMUtilities;
 
 /**
  *
@@ -25,14 +25,14 @@ public class ImageUtilityTest
 		}
 
 	    System.out.println(args[0]);
-	    PgmUtilities pgmUtil = new PgmUtilities();
+	    PGMUtilities pgmUtil = new PGMUtilities();
 
-		PGM imgIn = pgmUtil.readPGM(args[0]);
+		PGMImage imgIn = pgmUtil.readPGM(args[0]);
 
 		if(imgIn == null)
 	       return;
 
-		PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
+		PGMImage imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
 
 		// copy the image
 		imgOut = pgmUtil.copyPGM(imgIn);

@@ -6,8 +6,10 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -19,9 +21,11 @@ import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
+	private Engine engine;
+	private JList<String> fileList = new JList<String>();
 
 	/**
 	 * Launch the application.
@@ -50,6 +54,8 @@ public class MainFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
 		
+		engine = new Engine();
+		
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
@@ -62,17 +68,18 @@ public class MainFrame extends JFrame {
 		panel.add(panel_1, BorderLayout.WEST);
 		panel_1.setLayout(new GridLayout(10, 2, 0, 0));
 		
-		JRadioButton rdbtnSobelHor = new JRadioButton("Sobel Horizontal");
-		panel_1.add(rdbtnSobelHor);
-		
-		JRadioButton rdbtnSobelVertical = new JRadioButton("Sobel Vertical");
-		panel_1.add(rdbtnSobelVertical);
+		JRadioButton rdbtnSobel = new JRadioButton("Sobel");
+		panel_1.add(rdbtnSobel);
+		rdbtnSobel.setSelected(true);
 		
 		JRadioButton rdbtnSharpening = new JRadioButton("Sharpening");
 		panel_1.add(rdbtnSharpening);
 		
 		JRadioButton rdbtnPrewitt = new JRadioButton("Prewitt");
 		panel_1.add(rdbtnPrewitt);
+		
+		JRadioButton rdbtnBox = new JRadioButton("Box");
+		panel_1.add(rdbtnBox);
 		
 		JRadioButton rdbtnGaussian = new JRadioButton("Gaussian");
 		panel_1.add(rdbtnGaussian);
@@ -114,7 +121,6 @@ public class MainFrame extends JFrame {
 		JPanel twoButtons = new JPanel();
 		panel_2.add(twoButtons);
 		
-		JList<String> fileList = new JList<String>();
 		fileList.setBounds(0, 36, 378, 175);
 		panel_2.add(fileList);
 		
@@ -152,10 +158,46 @@ public class MainFrame extends JFrame {
 		JButton btnCompute = new JButton("Compute");
 		btnCompute.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				ArrayList<String> selectedFiles = new ArrayList<String>();
+				for (int i = 0; i < fileList.getModel().getSize(); i++) {
+					selectedFiles.add(fileList.getModel().getElementAt(i));
+				}
+				engine.setSelectedFiles(selectedFiles);
+				engine.compute();
 			}
 		});
 		
 		computePanel.add(btnCompute);
 		panel_2.add(computePanel);
+		
+		ButtonGroup filtersGroup = new ButtonGroup();
+		filtersGroup.add(rdbtnCanny);
+		filtersGroup.add(rdbtnBox);
+		filtersGroup.add(rdbtnGaussian);
+		filtersGroup.add(rdbtnGaussianNoise);
+		filtersGroup.add(rdbtnImpulseNoise);
+		filtersGroup.add(rdbtnIsotropic);
+		filtersGroup.add(rdbtnMedian);
+		filtersGroup.add(rdbtnNagaomatsuyama);
+		filtersGroup.add(rdbtnPrewitt);
+		filtersGroup.add(rdbtnRank);
+		filtersGroup.add(rdbtnSaltandpepperNoise);
+		filtersGroup.add(rdbtnSharpening);
+		filtersGroup.add(rdbtnSobel);
+		filtersGroup.add(rdbtnThreenines);
+		filtersGroup.add(rdbtnUniformNoise);
+		
+		rdbtnSobel.addActionListener(this);
+		rdbtnBox.addActionListener(this);
+		
+		rdbtnSobel.setActionCommand("Sobel");
+		rdbtnBox.setActionCommand("Box");
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		engine.setAlgorithmByName(e.getActionCommand());
 	}
 }

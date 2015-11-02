@@ -1,14 +1,14 @@
 package tests;
 
-import pgm_utilities.PGM;
-import pgm_utilities.PgmUtilities;
+import pgm_utilities.PGMImage;
+import pgm_utilities.PGMUtilities;
 import filters.noiseUtilities;
 
 public class UniformNoiseAdderTest {
 
 	public static void main(String[] args) {
-		PgmUtilities pgmUtil = new PgmUtilities();
-		PGM imgIn = pgmUtil.readPGM("img/inverno.pgm");
+		PGMUtilities pgmUtil = new PGMUtilities();
+		PGMImage imgIn = pgmUtil.readPGM("img/inverno.pgm");
 
 			if(imgIn == null)
 		       return;
@@ -17,7 +17,7 @@ public class UniformNoiseAdderTest {
 		
 		int[] out2 = nu.addUniformNoise(imgIn.getPixels(), 40);
 		
-		PGM imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
+		PGMImage imgOut = pgmUtil.newPGM(imgIn.getWidth(), imgIn.getHeight(), imgIn.getMax_val());
 		imgOut.setPixels(out2);	
 		pgmUtil.writePGM(imgOut, "testResults/uniform.pgm");
 	}
