@@ -1,5 +1,5 @@
 package tests;
-import filters.filterUtilities;
+import oldfilters.filterUtilities;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 

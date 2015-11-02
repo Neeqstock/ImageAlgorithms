@@ -1,8 +1,8 @@
 package tests;
 
+import oldfilters.noiseUtilities;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
-import filters.noiseUtilities;
 
 public class UniformNoiseAdderTest {
 
