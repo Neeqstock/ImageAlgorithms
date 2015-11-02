@@ -2,40 +2,40 @@ package filters;
 
 public class filterUtilities {
 
+	
+	/** fa l'operazione di convoluzione del kernel con una parte dell'immagine, avente le stesse dimensioni
+	 * @return il valore di convoluzione */
 	public double convolution(double[] kernel, double[] img){
 		
-		// si suppone che vengano passati kernel e imagini di dimensioni giuste
-		
 		int r = img.length;
-		
 		double conv = 0;
 				
 		for (int i = 0; i < r; i++) {
 				conv = conv + (kernel[i] * img[i]);
 		}
-		
-			// si suppone quasi sempre vero     	if((rows>=3) & (columns >=3)){} 
 			return conv;
 	}
 	
+	/** esegue il mapping (passaggio di coordinate) da un range di partenza al range 0-255
+	 *  è necessario dopo alcuni filtri che restituiscono valori non rappresentabili
+	 *  @return un array di interi (valori pixel)*/
 	public int[] mapping(double[] convoluted, double max, double min){
 		int[] output = new int[convoluted.length];
 		double outputMax = 255;
 		double outputMin = 0;
 			
-		// output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
 		for (int i = 0; i < output.length; i++) {
 			double tmp = ((outputMax - outputMin)/ (max - min)) * (convoluted[i] - min);			
 			output[i] = (int) tmp;
-		}
-		
+		}		
 		return output;
 	}
 		
-	/** 3X3 matrix convolution */ 
+	/** per matrici 3X3: convoluzione 
+	 * esegue la convoluzione dell'intera immagine con un kernel 3X3 (utilizzo della funzione convolution) 
+	 * @return un array di double*/ 
 	public double[] TotalConvolution3(double[]kernel, int[] img, int rows, int columns){
 		
-		// -1, a causa del bordo 
 		double[] convoluteImage = new double[img.length];
 						
 		for (int i = 1; i < rows-1; i++) {
@@ -59,7 +59,9 @@ public class filterUtilities {
 		return convoluteImage;
 	}
 	
-	/** convolution for Nagao-Matsuyama */	
+	/** per matrici 5X5: convoluzione 
+	 * esegue la convoluzione dell'intera immagine con un kernel 5X5 (utilizzo della funzione convolution) 
+	 * @return un array di double */	
 	public double[] TotalConvolution5(double[]kernel, int[] img, int rows, int columns){
 		
 		double[] convoluteImage = new double[img.length];
@@ -105,23 +107,25 @@ public class filterUtilities {
 		return convoluteImage;
 	}
 	
+	/** trasforma un array di double in entrata(proveniente da convoluzioni e filtri)
+	 *  in un array di interi (da inserire nel PGM)*/
 	public int[] toIntArray(double[] inputArray){
 		int[] output = new int[inputArray.length];
 		
 		for (int i = 0; i < output.length; i++) {
 			output[i] = (int)inputArray[i];
 		}
-		
 		return output;
 	}
 	
+	/** trasforma un array di interi(valori pixel in ingresso)
+	 *  in un array di double (per applicare filtri)*/
 	public double[] toDoubleArray(int[] inputArray){
 		double[] output = new double[inputArray.length];
 
 		for (int i = 0; i < output.length; i++) {
 			output[i] = (double)inputArray[i];
 		}
-		
 		return output;
 	}
 	

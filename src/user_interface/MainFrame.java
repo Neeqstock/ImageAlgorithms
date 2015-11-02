@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -124,7 +123,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		fileList.setBounds(0, 36, 378, 175);
 		panel_2.add(fileList);
 		
-		DefaultListModel<String> listModel = new DefaultListModel<String>();
+		final DefaultListModel<String> listModel = new DefaultListModel<String>();
 		fileList.setModel(listModel);
 		
 		JButton btnPickAPgm = new JButton("Pick a PGM image");
