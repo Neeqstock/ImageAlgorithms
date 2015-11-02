@@ -17,11 +17,11 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 § Filtri e noise
 
 
-	[] Box filter		1/9 [1 1 1; 1 1 1; 1 1 1]
+	[X] Box filter		1/9 [1 1 1; 1 1 1; 1 1 1]
 	[] Prewitt			[-1 0 1; -1 0 1; -1 0 1] anche verticale
-	[] Sharpening		[0 0 0; 0 2 0; 0 0 0] - Box filter
-	[] Sobel orizz.		[1 0 -1; 2 0 -2; 1 0 -1]
-	[] Sobel verticale	[1 2 1; 0 0 0; -1 -2 -1]
+	[X] Sharpening		[0 0 0; 0 2 0; 0 0 0] - Box filter
+	[X] Sobel orizz.		[1 0 -1; 2 0 -2; 1 0 -1]
+	[X] Sobel verticale	[1 2 1; 0 0 0; -1 -2 -1]
 	[] Gaussiano		(valori da guardare slide pag 39)
 	[] 3/9
 	[] Normalizzazione

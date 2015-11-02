@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterAlgorithms.AlgBox;
+import filterAlgorithms.AlgSharpening;
 import filterAlgorithms.AlgSobel;
 import filterAlgorithms.IAlgorithm;
 
 public class Engine {
-	private IAlgorithm selectedAlgorithm;
+	
+	private IAlgorithm selectedAlgorithm = new AlgSobel(); // XXX DEFAULT
 	private ArrayList<String> selectedFiles = new ArrayList<String>();
 	
 	public Engine() {
@@ -28,6 +30,8 @@ public class Engine {
 			case "Box":
 				selectedAlgorithm = new AlgBox();
 				break;
+			case "Sharpening":
+				selectedAlgorithm = new AlgSharpening();
 			default:
 				break;
 		}
