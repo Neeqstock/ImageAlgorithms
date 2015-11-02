@@ -2,11 +2,11 @@ package user_interface;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterAlgorithms.AlgBox;
+import filterAlgorithms.AlgPrewitt;
 import filterAlgorithms.AlgSharpening;
 import filterAlgorithms.AlgSobel;
 import filterAlgorithms.IAlgorithm;
@@ -34,6 +34,10 @@ public class Engine {
 			break;
 		case "Sharpening":
 			selectedAlgorithm = new AlgSharpening();
+			break;
+		case "Prewitt":
+			selectedAlgorithm = new AlgPrewitt();
+			break;
 		default:
 			break;
 		}

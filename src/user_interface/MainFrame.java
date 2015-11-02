@@ -198,10 +198,12 @@ public class MainFrame extends JFrame implements ActionListener {
 		rdbtnSobel.addActionListener(this);
 		rdbtnBox.addActionListener(this);
 		rdbtnSharpening.addActionListener(this);
+		rdbtnPrewitt.addActionListener(this);
 
 		rdbtnSobel.setActionCommand("Sobel");
 		rdbtnBox.setActionCommand("Box");
 		rdbtnSharpening.setActionCommand("Sharpening");
+		rdbtnPrewitt.setActionCommand("Prewitt");
 
 	}
 
