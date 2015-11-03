@@ -8,7 +8,7 @@ public class SobelTest {
 
 	public static void main(String[] args) {
 		    PGMUtilities pgmUtil = new PGMUtilities();
-			PGMImage imgIn = pgmUtil.readPGM("img/estate.pgm");
+			PGMImage imgIn = pgmUtil.readPGM("img/inverno.pgm");
 			
 			if(imgIn == null)
 		       return;
