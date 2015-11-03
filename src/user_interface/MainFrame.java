@@ -88,6 +88,12 @@ public class MainFrame extends JFrame implements ActionListener {
 
 		JRadioButton rdbtnThreenines = new JRadioButton("Threenines");
 		panel_1.add(rdbtnThreenines);
+		
+		JRadioButton rdbtnDoG = new JRadioButton("DoG");
+		panel_1.add(rdbtnDoG);
+		
+		JRadioButton rdbtnRoberts = new JRadioButton("Roberts");
+		panel_1.add(rdbtnRoberts);
 
 		JRadioButton rdbtnIsotropic = new JRadioButton("Isotropic");
 		panel_1.add(rdbtnIsotropic);
@@ -194,6 +200,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		filtersGroup.add(rdbtnSobel);
 		filtersGroup.add(rdbtnThreenines);
 		filtersGroup.add(rdbtnUniformNoise);
+		filtersGroup.add(rdbtnDoG);
+		filtersGroup.add(rdbtnRoberts);
 
 		rdbtnSobel.addActionListener(this);
 		rdbtnBox.addActionListener(this);
@@ -210,6 +218,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		rdbtnSaltandpepperNoise.addActionListener(this);
 		rdbtnThreenines.addActionListener(this);
 		rdbtnUniformNoise.addActionListener(this);
+		rdbtnDoG.addActionListener(this);
+		rdbtnRoberts.addActionListener(this);
 
 		rdbtnSobel.setActionCommand("Sobel");
 		rdbtnBox.setActionCommand("Box");
@@ -226,6 +236,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		rdbtnSaltandpepperNoise.setActionCommand("SaltPepperNoise");
 		rdbtnThreenines.setActionCommand("ThreeNine");
 		rdbtnUniformNoise.setActionCommand("UniformNoise");
+		rdbtnDoG.setActionCommand("DoG");
+		rdbtnRoberts.setActionCommand("Roberts");
 	}
 
 	@Override

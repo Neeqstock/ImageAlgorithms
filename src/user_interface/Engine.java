@@ -7,6 +7,7 @@ import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterAlgorithms.AlgBox;
 import filterAlgorithms.AlgCanny;
+import filterAlgorithms.AlgDoG;
 import filterAlgorithms.AlgGaussNoise;
 import filterAlgorithms.AlgGaussian;
 import filterAlgorithms.AlgImpulseNoise;
@@ -15,6 +16,7 @@ import filterAlgorithms.AlgMedian;
 import filterAlgorithms.AlgNagao;
 import filterAlgorithms.AlgPrewitt;
 import filterAlgorithms.AlgRank;
+import filterAlgorithms.AlgRoberts;
 import filterAlgorithms.AlgSaltPepperNoise;
 import filterAlgorithms.AlgSharpening;
 import filterAlgorithms.AlgSobel;
@@ -81,6 +83,12 @@ public class Engine {
 			break;
 		case "UniformNoise":
 			selectedAlgorithm = new AlgUniformNoise();
+			break;
+		case "Roberts":
+			selectedAlgorithm = new AlgDoG();
+			break;
+		case "DoG":
+			selectedAlgorithm = new AlgRoberts();
 			break;
 			
 		default:
