@@ -6,9 +6,20 @@ import java.util.ArrayList;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterAlgorithms.AlgBox;
+import filterAlgorithms.AlgCanny;
+import filterAlgorithms.AlgGaussNoise;
+import filterAlgorithms.AlgGaussian;
+import filterAlgorithms.AlgImpulseNoise;
+import filterAlgorithms.AlgIsotropic;
+import filterAlgorithms.AlgMedian;
+import filterAlgorithms.AlgNagao;
 import filterAlgorithms.AlgPrewitt;
+import filterAlgorithms.AlgRank;
+import filterAlgorithms.AlgSaltPepperNoise;
 import filterAlgorithms.AlgSharpening;
 import filterAlgorithms.AlgSobel;
+import filterAlgorithms.AlgThreeNine;
+import filterAlgorithms.AlgUniformNoise;
 import filterAlgorithms.IAlgorithm;
 
 public class Engine {
@@ -38,6 +49,40 @@ public class Engine {
 		case "Prewitt":
 			selectedAlgorithm = new AlgPrewitt();
 			break;
+		case "Canny":
+			selectedAlgorithm = new AlgCanny();
+			break;
+		case "Gaussian":
+			selectedAlgorithm = new AlgGaussian();
+			break;
+		case "Isotropic":
+			selectedAlgorithm = new AlgIsotropic();
+			break;			
+		case "GaussNoise":
+			selectedAlgorithm = new AlgGaussNoise();
+			break;		
+		case "ImpulseNoise":
+			selectedAlgorithm = new AlgImpulseNoise();
+			break;			
+		case "Median":
+			selectedAlgorithm = new AlgMedian();
+			break;	
+		case "Nagao":
+			selectedAlgorithm = new AlgNagao();
+			break;	
+		case "Rank":
+			selectedAlgorithm = new AlgRank();
+			break;	
+		case "SaltPepperNoise":
+			selectedAlgorithm = new AlgSaltPepperNoise();
+			break;
+		case "ThreeNine":
+			selectedAlgorithm = new AlgThreeNine();
+			break;
+		case "UniformNoise":
+			selectedAlgorithm = new AlgUniformNoise();
+			break;
+			
 		default:
 			break;
 		}

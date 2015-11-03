@@ -199,12 +199,33 @@ public class MainFrame extends JFrame implements ActionListener {
 		rdbtnBox.addActionListener(this);
 		rdbtnSharpening.addActionListener(this);
 		rdbtnPrewitt.addActionListener(this);
+		rdbtnCanny.addActionListener(this);
+		rdbtnGaussian.addActionListener(this);
+		rdbtnGaussianNoise.addActionListener(this);
+		rdbtnImpulseNoise.addActionListener(this);
+		rdbtnIsotropic.addActionListener(this);
+		rdbtnMedian.addActionListener(this);
+		rdbtnNagaomatsuyama.addActionListener(this);
+		rdbtnRank.addActionListener(this);
+		rdbtnSaltandpepperNoise.addActionListener(this);
+		rdbtnThreenines.addActionListener(this);
+		rdbtnUniformNoise.addActionListener(this);
 
 		rdbtnSobel.setActionCommand("Sobel");
 		rdbtnBox.setActionCommand("Box");
 		rdbtnSharpening.setActionCommand("Sharpening");
 		rdbtnPrewitt.setActionCommand("Prewitt");
-
+		rdbtnCanny.setActionCommand("Canny");
+		rdbtnGaussian.setActionCommand("Gaussian");
+		rdbtnGaussianNoise.setActionCommand("GaussNoise");
+		rdbtnImpulseNoise.setActionCommand("ImpulseNoise");
+		rdbtnIsotropic.setActionCommand("Isotropic");
+		rdbtnMedian.setActionCommand("Median");
+		rdbtnNagaomatsuyama.setActionCommand("Nagao");
+		rdbtnRank.setActionCommand("Rank");
+		rdbtnSaltandpepperNoise.setActionCommand("SaltPepperNoise");
+		rdbtnThreenines.setActionCommand("ThreeNine");
+		rdbtnUniformNoise.setActionCommand("UniformNoise");
 	}
 
 	@Override

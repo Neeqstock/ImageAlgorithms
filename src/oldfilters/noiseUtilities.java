@@ -5,7 +5,7 @@ import java.util.Random;
 public class noiseUtilities {
 	
 	/**adds salt&pepper noise to img, affecting (density*img.length) pixels */
-	public int[] addSaltPepperNoise(int[] img, double density){
+	public static int[] addSaltPepperNoise(int[] img, double density){
 		int[] newImg = img;
 		int imgSize = img.length;
 		int affectedPixels =(int) (((double)imgSize) * density);
@@ -23,7 +23,7 @@ public class noiseUtilities {
 	}
 	
 	/** adds AWGN to img. Gaussian noise has a given mean and variance */
-	public int[] addAWGNNoise(int[] img, double mean, double variance){
+	public static int[] addAWGNNoise(int[] img, double mean, double variance){
 		int[] newImg = img;
 		Random rnd = new Random();
 		
@@ -43,7 +43,7 @@ public class noiseUtilities {
 	}
 	
 	/**add impulsive noise */ 
-	public int[] addImpulsiveNoise(int[] img, double density){
+	public static int[] addImpulsiveNoise(int[] img, double density){
 		int[] newImg = img;
 		int imgSize = img.length;
 		int affectedPixels =(int) (((double)imgSize) * density);
@@ -57,7 +57,7 @@ public class noiseUtilities {
 	}
 
 	/** add uniform noise to img. K is maximum noise value*/
-	public int[] addUniformNoise(int[] img, int k){
+	public static int[] addUniformNoise(int[] img, int k){
 		int[] out = img;
 		Random rnd = new Random();
 		for (int i = 0; i < out.length; i++) {

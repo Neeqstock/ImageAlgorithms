@@ -22,12 +22,9 @@ public class AlgSharpening implements IAlgorithm {
 		}
 		
 		int[] intArray = FilterMaths.mapping(filteredArray);
-		
 		PGMImage filteredImage = new PGMImage(image.getWidth(), image.getHeight(), image.getMax_val());
-		
 		filteredImage.setPixels(intArray);
-		
-		PGMUtilities.writePGM(filteredImage, PGMUtilities.standardOutputPath + name + "_box.pgm");
+		PGMUtilities.writePGM(filteredImage, PGMUtilities.standardOutputPath + name + "_sharpening.pgm");
 		
 	}
 
