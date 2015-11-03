@@ -28,6 +28,12 @@ public abstract class AFilter {
 				rows, columns);
 		return convoluted;
 	}
+	
+	protected double[] computeNagao(int[] image, int rows, int columns){
+		double[] convoluted = FilterMaths.totalNagao(image,
+				rows, columns);
+		return convoluted;
+	}
 
 	public abstract double[] getFilteredImage(PGMImage image);
 
