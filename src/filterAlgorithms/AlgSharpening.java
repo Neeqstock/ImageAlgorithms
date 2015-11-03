@@ -1,9 +1,9 @@
 package filterAlgorithms;
 
+import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterObjects.Box;
-import filterObjects.FilterMaths;
 import filterObjects.Sharpening;
 
 public class AlgSharpening implements IAlgorithm {

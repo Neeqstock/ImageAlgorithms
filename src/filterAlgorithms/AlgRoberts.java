@@ -1,6 +1,6 @@
 package filterAlgorithms;
 
-import filterObjects.FilterMaths;
+import maths.FilterMaths;
 import filterObjects.RobertsX;
 import filterObjects.RobertsY;
 import pgm_utilities.PGMImage;

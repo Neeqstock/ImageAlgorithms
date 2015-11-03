@@ -1,5 +1,6 @@
 package filterObjects;
 
+import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 
 public abstract class AFilter {

@@ -22,7 +22,7 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	[X] Sharpening		[0 0 0; 0 2 0; 0 0 0] - Box filter
 	[X] Sobel orizz.		[1 0 -1; 2 0 -2; 1 0 -1]
 	[X] Sobel verticale	[1 2 1; 0 0 0; -1 -2 -1]
-	[] Gaussiano		(valori da guardare slide pag 39)
+	[X] Gaussiano		(valori da guardare slide pag 39)
 	[] 3/9
 	[X] Normalizzazione
 	[X] Equalizzazione

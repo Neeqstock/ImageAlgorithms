@@ -1,9 +1,9 @@
 package filterAlgorithms;
 
+import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterObjects.Box;
-import filterObjects.FilterMaths;
 
 public class AlgBox implements IAlgorithm {
 	

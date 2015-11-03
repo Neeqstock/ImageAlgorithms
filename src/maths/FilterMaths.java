@@ -1,4 +1,4 @@
-package filterObjects;
+package maths;
 
 public class FilterMaths {
 

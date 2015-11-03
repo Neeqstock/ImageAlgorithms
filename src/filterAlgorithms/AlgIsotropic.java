@@ -1,8 +1,8 @@
 package filterAlgorithms;
 
+import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
-import filterObjects.FilterMaths;
 import filterObjects.IsotropicHorizontal;
 import filterObjects.IsotropicVertical;
 
