@@ -28,8 +28,8 @@ public class AlgSobel implements IAlgorithm {
 		imgModule.setPixels(intModule);
 		imgPhase.setPixels(intPhase);
 		
-		PGMUtilities.writePGM(imgModule, PGMUtilities.standardOutputPath + name + "_module.pgm");
-		PGMUtilities.writePGM(imgPhase, PGMUtilities.standardOutputPath + name + "_phase.pgm");
+		PGMUtilities.writePGM(imgModule, PGMUtilities.standardOutputPath + name + "_Sobelmodule.pgm");
+		PGMUtilities.writePGM(imgPhase, PGMUtilities.standardOutputPath + name + "_Sobelphase.pgm");
 		
 	}
 
