@@ -40,13 +40,13 @@ public class FilterMaths {
 				double[] kernelledImage = new double[kernel.length];
 
 				kernelledImage[0] = img[(i - 1) * columns + (j - 1)];
-				kernelledImage[1] = img[(i - 1) * columns + (j)];
-				kernelledImage[2] = img[(i - 1) * columns + (j + 1)];
-				kernelledImage[3] = img[(i) * columns + (j - 1)];
+				kernelledImage[3] = img[(i - 1) * columns + (j)];
+				kernelledImage[6] = img[(i - 1) * columns + (j + 1)];
+				kernelledImage[1] = img[(i) * columns + (j - 1)];
 				kernelledImage[4] = img[(i) * columns + (j)];
 				kernelledImage[5] = img[(i) * columns + (j + 1)];
-				kernelledImage[6] = img[(i + 1) * columns + (j - 1)];
-				kernelledImage[7] = img[(i + 1) * columns + (j)];
+				kernelledImage[7] = img[(i + 1) * columns + (j - 1)];
+				kernelledImage[5] = img[(i + 1) * columns + (j)];
 				kernelledImage[8] = img[(i + 1) * columns + (j + 1)];
 
 				convolutedDoubleImage[i * columns + j] = convolution(kernel,
@@ -312,15 +312,5 @@ public class FilterMaths {
 
 		return output;
 	}
-
-	public static double[] CastIntToDoubleArray(int[] inputArray){
-		double[] output = new double[inputArray.length];
-
-		for (int i = 0; i < output.length; i++) {
-			output[i] = (double)inputArray[i];
-		}
-		return output;
-	}
-	
 	
 }

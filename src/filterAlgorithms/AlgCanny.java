@@ -45,7 +45,12 @@ public class AlgCanny implements IAlgorithm {
 		int[] outData = ((DataBufferInt) edges.getRaster().getDataBuffer())
 				.getData();
 
-		outData = FilterMaths.mapping((FilterMaths.CastIntToDoubleArray(outData)));
+		double[] dData = new double[outData.length];
+		for (int i = 0; i < outData.length; i++) {
+			dData[i] = (double)outData[i];
+		}
+		
+		outData = FilterMaths.mapping(dData);
 		
 		// int[] pixel2 = new int[edges.getWidth()*edges.getHeight()];
 		//
