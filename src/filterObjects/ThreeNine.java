@@ -40,10 +40,20 @@ public class ThreeNine extends AFilter {
 				kernelledImage[7] = pixelArray[(i + 1) * columns + (j)];
 				kernelledImage[8] = pixelArray[(i + 1) * columns + (j + 1)];
 
-				double sum = kernelledImage[0];
+				double sum = 0;
+				double a = kernelledImage[0];
+				double b = kernelledImage[0];
 				for (int k = 1; k < kernelledImage.length; k++) {
 					sum += kernelledImage[k];
+					if (a > kernelledImage[k]) {
+						a = kernelledImage[k];
+					}
+					if (b < kernelledImage[k]) {
+						b = kernelledImage[k];
+					}
 				}
+				double tau = a/b;
+				double threshold = (1d - tau)/((2d*tau) + 1d);
 				
 				double[] conv = new double[8];
 				conv[0] = convolution(kernelE, kernelledImage);
@@ -73,6 +83,10 @@ public class ThreeNine extends AFilter {
 				}
 				
 				double p = (1.5) * ((max / sum) - 0.333);
+			//	System.out.println(p + "       " + threshold);
+				if (p < threshold) {
+					p = 0;
+				}
 				filteredArray[i * columns + j] = p;
 			}
 		}
