@@ -29,10 +29,10 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	[X] Roberts (kernel 2x2)
 	[X] Isotropic		[-1 0 1; -sqrt2 0 sqrt2; -1 0 1] anche verticale
 	[] DoG (teoria su matlab) (dimensione del kernel: 6 volte la varianza massima) la larghezza del kernel dev'essere 6 volte la varianza
-	[] Canny
+	[X] Canny
 	[] Median
 	[] Rank
-	[] Nagao-Matsuyama
+	[X] Nagao-Matsuyama
 	NO Kirsh
 	NO Compass		
 	NO Laplace
