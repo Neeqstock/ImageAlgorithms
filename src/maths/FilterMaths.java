@@ -313,4 +313,14 @@ public class FilterMaths {
 		return output;
 	}
 
+	public static double[] CastIntToDoubleArray(int[] inputArray){
+		double[] output = new double[inputArray.length];
+
+		for (int i = 0; i < output.length; i++) {
+			output[i] = (double)inputArray[i];
+		}
+		return output;
+	}
+	
+	
 }
