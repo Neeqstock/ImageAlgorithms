@@ -10,7 +10,7 @@ public class AlgNagao implements IAlgorithm {
 	private NagaoMatsuyama filter = new NagaoMatsuyama();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] filteredArray = filter.getFilteredImage(image);
 		int[] intArray = FilterMaths.mapping(filteredArray);
 

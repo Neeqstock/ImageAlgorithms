@@ -12,7 +12,7 @@ public class AlgRoberts implements IAlgorithm {
 	private RobertsY robertsY = new RobertsY();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] horImage = robertsX.getFilteredImage(image);
 		double[] verImage = robertsY.getFilteredImage(image);
 		

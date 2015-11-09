@@ -34,6 +34,12 @@ public abstract class AFilter {
 				rows, columns);
 		return convoluted;
 	}
+	
+	protected double[] computeRank(int[] image, int rows, int columns, int rankDimension){
+		double[] ranked = FilterMaths.rank(image, rows, columns,
+				rankDimension);
+		return ranked;
+	}
 
 	public abstract double[] getFilteredImage(PGMImage image);
 

@@ -13,12 +13,14 @@ import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -100,12 +102,16 @@ public class MainFrame extends JFrame implements ActionListener {
 
 		JRadioButton rdbtnCanny = new JRadioButton("Canny");
 		panel_1.add(rdbtnCanny);
-
-		JRadioButton rdbtnMedian = new JRadioButton("Median");
-		panel_1.add(rdbtnMedian);
-
+		
 		JRadioButton rdbtnRank = new JRadioButton("Rank");
-		panel_1.add(rdbtnRank);
+		String[] rankNumbers = {"1", "3", "5", "7", "9"};
+		JComboBox cbboxRank = new JComboBox(rankNumbers);
+		cbboxRank.setSelectedIndex(0);
+		JPanel pnlRank = new JPanel();
+		pnlRank.setLayout(new GridLayout(1, 2));
+		pnlRank.add(rdbtnRank);
+		pnlRank.add(cbboxRank);
+		panel_1.add(pnlRank);
 
 		JRadioButton rdbtnNagaomatsuyama = new JRadioButton("Nagao-Matsuyama");
 		panel_1.add(rdbtnNagaomatsuyama);
@@ -177,6 +183,12 @@ public class MainFrame extends JFrame implements ActionListener {
 					selectedFiles.add(fileList.getModel().getElementAt(i));
 				}
 				engine.setSelectedFiles(selectedFiles);
+				
+				if(rdbtnRank.isSelected()){
+					String[] args = {(String)cbboxRank.getSelectedItem()};
+					engine.setArgs(args);
+				}
+				
 				engine.compute();
 			}
 		});
@@ -191,7 +203,6 @@ public class MainFrame extends JFrame implements ActionListener {
 		filtersGroup.add(rdbtnGaussianNoise);
 		filtersGroup.add(rdbtnImpulseNoise);
 		filtersGroup.add(rdbtnIsotropic);
-		filtersGroup.add(rdbtnMedian);
 		filtersGroup.add(rdbtnNagaomatsuyama);
 		filtersGroup.add(rdbtnPrewitt);
 		filtersGroup.add(rdbtnRank);
@@ -212,7 +223,6 @@ public class MainFrame extends JFrame implements ActionListener {
 		rdbtnGaussianNoise.addActionListener(this);
 		rdbtnImpulseNoise.addActionListener(this);
 		rdbtnIsotropic.addActionListener(this);
-		rdbtnMedian.addActionListener(this);
 		rdbtnNagaomatsuyama.addActionListener(this);
 		rdbtnRank.addActionListener(this);
 		rdbtnSaltandpepperNoise.addActionListener(this);
@@ -230,7 +240,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		rdbtnGaussianNoise.setActionCommand("GaussNoise");
 		rdbtnImpulseNoise.setActionCommand("ImpulseNoise");
 		rdbtnIsotropic.setActionCommand("Isotropic");
-		rdbtnMedian.setActionCommand("Median");
+
 		rdbtnNagaomatsuyama.setActionCommand("Nagao");
 		rdbtnRank.setActionCommand("Rank");
 		rdbtnSaltandpepperNoise.setActionCommand("SaltPepperNoise");

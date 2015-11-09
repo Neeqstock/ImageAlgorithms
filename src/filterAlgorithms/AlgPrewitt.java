@@ -12,7 +12,7 @@ public class AlgPrewitt implements IAlgorithm {
 	private PrewittVertical prewVer = new PrewittVertical();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] horImage = prewHor.getFilteredImage(image);
 		double[] verImage = prewVer.getFilteredImage(image);
 		

@@ -1,48 +1,11 @@
 package filterAlgorithms;
 
-import java.util.Random;
-
 import pgm_utilities.PGMImage;
-import pgm_utilities.PGMUtilities;
 
 public class AlgSaltPepperNoise implements IAlgorithm{
-	
-	private double density;
-	
-	//STUB
-	public AlgSaltPepperNoise(){
-		density = 0.05;
-	}
-	
-	public AlgSaltPepperNoise(double density){
-		this.density = density;
-	}
-	
-	public void setDensity(double density) {
-		this.density = density;
-	}
-	public double getDensity() {
-		return density;
-	}
-	
 @Override
-public void computeImage(PGMImage image, String name) {
-	int[] newImg = image.getPixels();
-	int imgSize = newImg.length;
-	int affectedPixels =(int) (((double)imgSize) * density);
-	Random rnd = new Random();
+public void computeImage(PGMImage image, String name, String[] args) {
+	// TODO Auto-generated method stub
 	
-	for (int i = 0; i < affectedPixels; i++) {
-		int nextIndex = rnd.nextInt(imgSize);
-		if ((rnd.nextInt() % 2) == 0) {
-			newImg[nextIndex] = 0;
-		}else{
-			newImg[nextIndex] = 255;
-		}
-	}
-	PGMImage filteredImage = new PGMImage(image.getWidth(), image.getHeight(), image.getMax_val());
-	filteredImage.setPixels(newImg);
-	
-	PGMUtilities.writePGM(filteredImage, PGMUtilities.standardOutputPath + name + "_SaltPepperNoise.pgm");
 }
 }

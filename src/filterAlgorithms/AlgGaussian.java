@@ -10,7 +10,7 @@ public class AlgGaussian implements IAlgorithm {
 	private Gaussian filter = new Gaussian();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] filteredArray = filter.getFilteredImage(image);
 		int[] intArray = FilterMaths.mapping(filteredArray);
 		

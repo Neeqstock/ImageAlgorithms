@@ -12,7 +12,7 @@ public class AlgIsotropic implements IAlgorithm{
 	private IsotropicVertical isotropicVer = new IsotropicVertical();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] horImage = isotropicHor.getFilteredImage(image);
 		double[] verImage = isotropicVer.getFilteredImage(image);
 		

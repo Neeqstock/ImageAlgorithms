@@ -10,7 +10,7 @@ public class AlgBox implements IAlgorithm {
 	private Box filter = new Box();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] filteredArray = filter.getFilteredImage(image);
 		int[] intArray = FilterMaths.mapping(filteredArray);
 		

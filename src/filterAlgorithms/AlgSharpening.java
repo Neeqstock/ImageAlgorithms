@@ -11,7 +11,7 @@ public class AlgSharpening implements IAlgorithm {
 	private Sharpening filter = new Sharpening();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] filteredArray = filter.getFilteredImage(image);
 		
 		Box boxFilter = new Box();

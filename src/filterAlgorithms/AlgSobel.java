@@ -12,7 +12,7 @@ public class AlgSobel implements IAlgorithm {
 	private SobelVertical sobelVer = new SobelVertical();
 	
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		double[] horImage = sobelHor.getFilteredImage(image);
 		double[] verImage = sobelVer.getFilteredImage(image);
 		

@@ -12,7 +12,7 @@ import canny.CannyEdgeDetector;
 public class AlgCanny implements IAlgorithm {
 
 	@Override
-	public void computeImage(PGMImage image, String name) {
+	public void computeImage(PGMImage image, String name, String[] args) {
 		// create the detector
 		CannyEdgeDetector detector = new CannyEdgeDetector();
 

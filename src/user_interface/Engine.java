@@ -13,7 +13,6 @@ import filterAlgorithms.AlgGaussNoise;
 import filterAlgorithms.AlgGaussian;
 import filterAlgorithms.AlgImpulseNoise;
 import filterAlgorithms.AlgIsotropic;
-import filterAlgorithms.AlgMedian;
 import filterAlgorithms.AlgNagao;
 import filterAlgorithms.AlgPrewitt;
 import filterAlgorithms.AlgRank;
@@ -29,7 +28,8 @@ public class Engine {
 
 	private IAlgorithm selectedAlgorithm = new AlgSobel(); // XXX DEFAULT
 	private ArrayList<String> selectedFiles = new ArrayList<String>();
-
+	private String[] args;
+	
 	public Engine() {
 
 	}
@@ -67,9 +67,6 @@ public class Engine {
 		case "ImpulseNoise":
 			selectedAlgorithm = new AlgImpulseNoise();
 			break;			
-		case "Median":
-			selectedAlgorithm = new AlgMedian();
-			break;	
 		case "Nagao":
 			selectedAlgorithm = new AlgNagao();
 			break;	
@@ -91,14 +88,15 @@ public class Engine {
 		case "Roberts":
 			selectedAlgorithm = new AlgRoberts();
 			break;
-			
-		default:
-			break;
 		}
 	}
 
 	public void setSelectedFiles(ArrayList<String> selectedFiles) {
 		this.selectedFiles = selectedFiles;
+	}
+	
+	public void setArgs(String[] args){
+		this.args = args;
 	}
 
 	public void compute() {
@@ -110,7 +108,7 @@ public class Engine {
 
 		for (int i = 0; i < selectedFiles.size(); i++) {
 			try {
-				selectedAlgorithm.computeImage(images.get(i), getNameToken(selectedFiles.get(i)));
+				selectedAlgorithm.computeImage(images.get(i), getNameToken(selectedFiles.get(i)), args);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
