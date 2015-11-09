@@ -15,7 +15,7 @@ public class AlgThreeNine implements IAlgorithm {
 		PGMImage filteredImage = new PGMImage(image.getWidth(),image.getHeight(), image.getMax_val());
 		
 		int[] intArray = FilterMaths.mapping(filter.getFilteredImage(image));
-		
+				
 		filteredImage.setPixels(intArray);
 		PGMUtilities.writePGM(filteredImage, PGMUtilities.standardOutputPath
 				+ name + "_3OVER9.pgm");
