@@ -2,6 +2,7 @@ package filterAlgorithms;
 
 import java.util.Random;
 
+import filterObjects.DoG;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
@@ -22,6 +23,13 @@ public class AlgSaltPepperNoise implements IAlgorithm{
 	
 @Override
 public void computeImage(PGMImage image, String name, String[] args) {
+	
+	if (!(args[0].equalsIgnoreCase(""))) {
+		if (Double.parseDouble(args[0]) !=0) {
+			setDensity(Double.parseDouble(args[0]));
+		}
+	} 
+	
 	int[] newImg = image.getPixels();
 	int imgSize = newImg.length;
 	int affectedPixels =(int) (((double)imgSize) * density);

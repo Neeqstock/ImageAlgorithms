@@ -91,8 +91,15 @@ public class MainFrame extends JFrame implements ActionListener {
 		JRadioButton rdbtnThreenines = new JRadioButton("Threenines");
 		panel_1.add(rdbtnThreenines);
 		
+		JPanel pnlDoG = new JPanel();
+		pnlDoG.setLayout(new GridLayout(1, 3));
 		JRadioButton rdbtnDoG = new JRadioButton("DoG");
-		panel_1.add(rdbtnDoG);
+		JTextField txtDoGvar1 = new JTextField();
+		JTextField txtDoGvar2 = new JTextField();
+		pnlDoG.add(rdbtnDoG);
+		pnlDoG.add(txtDoGvar1);
+		pnlDoG.add(txtDoGvar2);
+		panel_1.add(pnlDoG);
 		
 		JRadioButton rdbtnRoberts = new JRadioButton("Roberts");
 		panel_1.add(rdbtnRoberts);
@@ -116,18 +123,41 @@ public class MainFrame extends JFrame implements ActionListener {
 		JRadioButton rdbtnNagaomatsuyama = new JRadioButton("Nagao-Matsuyama");
 		panel_1.add(rdbtnNagaomatsuyama);
 
-		JRadioButton rdbtnSaltandpepperNoise = new JRadioButton(
-				"SaltAndPepper noise");
-		panel_1.add(rdbtnSaltandpepperNoise);
+		JRadioButton rdbtnSAPnoise = new JRadioButton(
+				"SAP noise");
+		JPanel pnlSAPnoise = new JPanel();
+		pnlSAPnoise.setLayout(new GridLayout(1, 2));
+		JTextField txtSAPdns = new JTextField();
+		pnlSAPnoise.add(rdbtnSAPnoise);
+		pnlSAPnoise.add(txtSAPdns);
+		panel_1.add(pnlSAPnoise);
 
-		JRadioButton rdbtnGaussianNoise = new JRadioButton("Gaussian noise");
-		panel_1.add(rdbtnGaussianNoise);
+		JRadioButton rdbtnGaussianNoise = new JRadioButton("Gauss noise");
+		JPanel pnlGausNoise = new JPanel();
+		pnlGausNoise.setLayout(new GridLayout(1, 3));
+		JTextField txtGausAvg = new JTextField();
+		JTextField txtGausVar = new JTextField();
+		pnlGausNoise.add(rdbtnGaussianNoise);
+		pnlGausNoise.add(txtGausAvg);
+		pnlGausNoise.add(txtGausVar);
+		panel_1.add(pnlGausNoise);
 
-		JRadioButton rdbtnUniformNoise = new JRadioButton("Uniform noise");
-		panel_1.add(rdbtnUniformNoise);
+		JRadioButton rdbtnUniformNoise = new JRadioButton("Uni noise");
+		JPanel pnlUniNoise = new JPanel();
+		pnlUniNoise.setLayout(new GridLayout(1, 2));
+		JTextField txtUniK = new JTextField();
+		pnlUniNoise.add(rdbtnUniformNoise);
+		pnlUniNoise.add(txtUniK);
+		panel_1.add(pnlUniNoise);
 
-		JRadioButton rdbtnImpulseNoise = new JRadioButton("Impulse noise");
-		panel_1.add(rdbtnImpulseNoise);
+
+		JRadioButton rdbtnImpulseNoise = new JRadioButton("Imp noise");
+		JPanel pnlImpNoise = new JPanel();
+		pnlImpNoise.setLayout(new GridLayout(1, 2));
+		JTextField txtImpDns = new JTextField();
+		pnlImpNoise.add(rdbtnImpulseNoise);
+		pnlImpNoise.add(txtImpDns);
+		panel_1.add(pnlImpNoise);
 
 		JPanel panel_2 = new JPanel();
 		panel.add(panel_2, BorderLayout.CENTER);
@@ -188,6 +218,26 @@ public class MainFrame extends JFrame implements ActionListener {
 					String[] args = {(String)cbboxRank.getSelectedItem()};
 					engine.setArgs(args);
 				}
+				if(rdbtnDoG.isSelected()){
+					String[] args = {txtDoGvar1.getText(), txtDoGvar2.getText()};
+					engine.setArgs(args);
+				}
+				if(rdbtnSAPnoise.isSelected()){
+					String[] args = {txtSAPdns.getText()};
+					engine.setArgs(args);
+				}
+				if(rdbtnGaussianNoise.isSelected()){
+					String[] args = {txtGausAvg.getText(), txtGausVar.getText()};
+					engine.setArgs(args);
+				}
+				if(rdbtnUniformNoise.isSelected()){
+					String[] args = {txtUniK.getText()};
+					engine.setArgs(args);
+				}
+				if(rdbtnImpulseNoise.isSelected()){
+					String[] args = {txtImpDns.getText()};
+					engine.setArgs(args);
+				}
 				
 				engine.compute();
 			}
@@ -206,7 +256,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		filtersGroup.add(rdbtnNagaomatsuyama);
 		filtersGroup.add(rdbtnPrewitt);
 		filtersGroup.add(rdbtnRank);
-		filtersGroup.add(rdbtnSaltandpepperNoise);
+		filtersGroup.add(rdbtnSAPnoise);
 		filtersGroup.add(rdbtnSharpening);
 		filtersGroup.add(rdbtnSobel);
 		filtersGroup.add(rdbtnThreenines);
@@ -225,7 +275,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		rdbtnIsotropic.addActionListener(this);
 		rdbtnNagaomatsuyama.addActionListener(this);
 		rdbtnRank.addActionListener(this);
-		rdbtnSaltandpepperNoise.addActionListener(this);
+		rdbtnSAPnoise.addActionListener(this);
 		rdbtnThreenines.addActionListener(this);
 		rdbtnUniformNoise.addActionListener(this);
 		rdbtnDoG.addActionListener(this);
@@ -243,7 +293,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 		rdbtnNagaomatsuyama.setActionCommand("Nagao");
 		rdbtnRank.setActionCommand("Rank");
-		rdbtnSaltandpepperNoise.setActionCommand("SaltPepperNoise");
+		rdbtnSAPnoise.setActionCommand("SaltPepperNoise");
 		rdbtnThreenines.setActionCommand("ThreeNine");
 		rdbtnUniformNoise.setActionCommand("UniformNoise");
 		rdbtnDoG.setActionCommand("DoG");

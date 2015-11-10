@@ -22,6 +22,14 @@ private double density;
 	
 	@Override
 	public void computeImage(PGMImage image, String name, String[] args) {
+		
+		if (!(args[0].equalsIgnoreCase(""))) {
+			if ((Double.parseDouble(args[0]) != 0)) {
+
+				density = Double.parseDouble(args[0]);
+			}
+		}
+		
 		int[] newImg = image.getPixels();
 		int imgSize = newImg.length;
 		int affectedPixels =(int) (((double)imgSize) * density);
