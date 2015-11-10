@@ -103,9 +103,9 @@ public class MainFrame extends JFrame implements ActionListener {
 		JRadioButton rdbtnCanny = new JRadioButton("Canny");
 		panel_1.add(rdbtnCanny);
 		
-		JRadioButton rdbtnRank = new JRadioButton("Rank");
+		final JRadioButton rdbtnRank = new JRadioButton("Rank");
 		String[] rankNumbers = {"1", "3", "5", "7", "9"};
-		JComboBox cbboxRank = new JComboBox(rankNumbers);
+		final JComboBox cbboxRank = new JComboBox(rankNumbers);
 		cbboxRank.setSelectedIndex(0);
 		JPanel pnlRank = new JPanel();
 		pnlRank.setLayout(new GridLayout(1, 2));
