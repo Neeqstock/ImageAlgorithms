@@ -8,11 +8,11 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 ================================================================
 
 § Interfaccia grafica
-	[] Selettore di file in input (Java File Picker o come si chiama lui)
-	[] Una lista per vedere che file abbiamo selezionato
-	[] Selettore di filtri, noise e altre schifezze da applicare su tutti i file selezionati
+	[X] Selettore di file in input (Java File Picker o come si chiama lui)
+	[X] Una lista per vedere che file abbiamo selezionato
+	[X] Selettore di filtri, noise e altre schifezze da applicare su tutti i file selezionati
 	[] Possibilità di selezionare quante volte applicare ogni singolo filtro
-	[] Una volta premuto sul tasto DO!, salva in una sottocartella le immagini elaborate
+	[X] Una volta premuto sul tasto DO!, salva in una sottocartella le immagini elaborate
 	
 § Filtri e noise
 
@@ -37,20 +37,20 @@ N davanti al quadrato quando NICK si è preso in carico il lavoro
 	NO Compass		
 	NO Laplace
 	
-	[] Salt and pepper noise
-	[] Gaussian noise
-	[] Impulse noise
-	[] Uniform noise
+	[X] Salt and pepper noise
+	[X] Gaussian noise
+	[X] Impulse noise
+	[X] Uniform noise
 
 § Classi e funzioni da realizzare
-	[] Kernel
-	[] Convoluzione
+	[X] Kernel
+	[X] Convoluzione
 	[] Possibilità di sommare e mischiare filtri
-	[] Estrazione modulo e fase
+	[X] Estrazione modulo e fase
 	
 @ Teoria
-	[] Trovare tutti i kernel che ci servono
-	[] Trovare tutti gli algoritmi dei vari noise
+	[X] Trovare tutti i kernel che ci servono
+	[X] Trovare tutti gli algoritmi dei vari noise
 	
 _ Objectives
 	[] Write a HTML report (or with Word)
