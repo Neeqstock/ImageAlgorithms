@@ -20,12 +20,19 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
+/**
+ * The main application interface window.
+ * @author Nicola, Tomas
+ *
+ */
 public class MainFrame extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Engine engine;
 	private JList<String> fileList = new JList<String>();

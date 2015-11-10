@@ -1,6 +1,5 @@
 package filterObjects;
 
-import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 
 public class ThreeNine extends AFilter {

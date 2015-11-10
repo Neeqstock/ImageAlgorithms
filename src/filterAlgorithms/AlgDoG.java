@@ -7,7 +7,6 @@ import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterObjects.DoG;
-import filterObjects.UnitaryKernel;
 
 public class AlgDoG implements IAlgorithm {
 	

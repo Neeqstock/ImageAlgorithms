@@ -1,10 +1,13 @@
 package maths;
 
-import java.awt.image.Kernel;
 import java.util.ArrayList;
 
 import filterObjects.NagaoMatsuyama;
-
+/**
+ * All the filters mathematics.
+ * @author Nicola, Tomas
+ *
+ */
 public class FilterMaths {
 
 	public static double[] totalConvolution2(double[] kernel, int[] img,

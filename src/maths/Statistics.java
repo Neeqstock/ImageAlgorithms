@@ -1,7 +1,11 @@
 package maths;
 
 import java.util.Arrays;
-
+/**
+ * Some statistic functions.
+ * @author Nicola, Tomas
+ *
+ */
 public class Statistics 
 {
 
