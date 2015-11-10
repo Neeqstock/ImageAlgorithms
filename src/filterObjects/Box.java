@@ -2,6 +2,12 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * The Box filter replaces each pixel with
+ * an average of its neighborhood,
+ * achieving smoothing effect
+ *
+ */
 public class Box extends AFilter {
 	
 	public Box() {

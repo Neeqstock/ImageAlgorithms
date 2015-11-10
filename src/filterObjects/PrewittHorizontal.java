@@ -2,6 +2,10 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * horizontal kernel for the prewitt (edge detection) filter
+ *
+ */
 public class PrewittHorizontal extends AFilter {
 	
 	public PrewittHorizontal() {

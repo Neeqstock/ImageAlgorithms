@@ -9,6 +9,12 @@ import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import canny.CannyEdgeDetector;
 
+/**
+ * 
+ * @see canny.CannyEdgeDetector
+ *
+ */
+
 public class AlgCanny implements IAlgorithm {
 
 	@Override

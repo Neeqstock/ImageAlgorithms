@@ -5,6 +5,11 @@ import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
+/** 
+ * 
+ * @see filterObjects.ThreeNine 
+ *
+ */
 public class AlgThreeNine implements IAlgorithm {
 	private ThreeNine filter = new ThreeNine();
 	@Override

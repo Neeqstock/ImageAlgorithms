@@ -6,6 +6,11 @@ import pgm_utilities.PGMUtilities;
 import filterObjects.Box;
 import filterObjects.Sharpening;
 
+/**
+ * 
+ * @see filterObjects.Sharpening
+ *
+ */
 public class AlgSharpening implements IAlgorithm {
 	
 	private Sharpening filter = new Sharpening();

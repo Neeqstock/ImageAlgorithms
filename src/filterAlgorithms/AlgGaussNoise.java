@@ -5,6 +5,11 @@ import java.util.Random;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
+/**
+ * Adds AWGN with a given mean and variance to the image. 
+ * If no values are given, mean = 0 and variance = 100 
+ * (to better see the results)
+ */
 public class AlgGaussNoise implements IAlgorithm {
 
 	private double mean;
@@ -12,7 +17,7 @@ public class AlgGaussNoise implements IAlgorithm {
 
 	public AlgGaussNoise() {
 		mean = 0;
-		variance = 100; // alta per apprezzare il risultato
+		variance = 100;
 	}
 
 	public void setMean(double mean) {

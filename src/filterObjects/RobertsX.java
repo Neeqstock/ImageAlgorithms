@@ -2,6 +2,10 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * horizontal kernel for the roberts (edge detection) filter
+ * 
+ */
 public class RobertsX extends AFilter {
 	
 	public RobertsX() {

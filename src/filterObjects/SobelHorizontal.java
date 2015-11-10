@@ -2,6 +2,10 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * horizontal kernel for the sobel (edge detection) filter
+ *
+ */
 public class SobelHorizontal extends AFilter {
 	
 	public SobelHorizontal() {

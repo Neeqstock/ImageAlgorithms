@@ -4,6 +4,14 @@ import maths.FilterMaths;
 import maths.GaussianFunction;
 import pgm_utilities.PGMImage;
 
+/**
+ * Difference of Gaussians
+ * computes the difference between two different Gauss-filtered images,
+ * each of them using a different size for the kernels.
+ * The variance of the two gaussians should be given by the user,
+ * otherwise the variances are 1 and 2 
+ *
+ */
 public class DoG extends AFilter {
 
 	public static final int defaultVarianceMAX = 2;

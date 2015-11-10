@@ -98,9 +98,9 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		JPanel pnlDoG = new JPanel();
 		pnlDoG.setLayout(new GridLayout(1, 3));
-		JRadioButton rdbtnDoG = new JRadioButton("DoG");
-		JTextField txtDoGvar1 = new JTextField();
-		JTextField txtDoGvar2 = new JTextField();
+		final JRadioButton rdbtnDoG = new JRadioButton("DoG");
+		final JTextField txtDoGvar1 = new JTextField();
+		final JTextField txtDoGvar2 = new JTextField();
 		pnlDoG.add(rdbtnDoG);
 		pnlDoG.add(txtDoGvar1);
 		pnlDoG.add(txtDoGvar2);
@@ -128,38 +128,37 @@ public class MainFrame extends JFrame implements ActionListener {
 		JRadioButton rdbtnNagaomatsuyama = new JRadioButton("Nagao-Matsuyama");
 		panel_1.add(rdbtnNagaomatsuyama);
 
-		JRadioButton rdbtnSAPnoise = new JRadioButton(
-				"SAP noise");
+		final JRadioButton rdbtnSAPnoise = new JRadioButton("SAP noise");
 		JPanel pnlSAPnoise = new JPanel();
 		pnlSAPnoise.setLayout(new GridLayout(1, 2));
-		JTextField txtSAPdns = new JTextField();
+		final JTextField txtSAPdns = new JTextField();
 		pnlSAPnoise.add(rdbtnSAPnoise);
 		pnlSAPnoise.add(txtSAPdns);
 		panel_1.add(pnlSAPnoise);
 
-		JRadioButton rdbtnGaussianNoise = new JRadioButton("Gauss noise");
-		JPanel pnlGausNoise = new JPanel();
+		final JRadioButton rdbtnGaussianNoise = new JRadioButton("Gauss noise");
+		final JPanel pnlGausNoise = new JPanel();
 		pnlGausNoise.setLayout(new GridLayout(1, 3));
-		JTextField txtGausAvg = new JTextField();
-		JTextField txtGausVar = new JTextField();
+		final JTextField txtGausAvg = new JTextField();
+		final JTextField txtGausVar = new JTextField();
 		pnlGausNoise.add(rdbtnGaussianNoise);
 		pnlGausNoise.add(txtGausAvg);
 		pnlGausNoise.add(txtGausVar);
 		panel_1.add(pnlGausNoise);
 
-		JRadioButton rdbtnUniformNoise = new JRadioButton("Uni noise");
-		JPanel pnlUniNoise = new JPanel();
+		final JRadioButton rdbtnUniformNoise = new JRadioButton("Uni noise");
+		final JPanel pnlUniNoise = new JPanel();
 		pnlUniNoise.setLayout(new GridLayout(1, 2));
-		JTextField txtUniK = new JTextField();
+		final JTextField txtUniK = new JTextField();
 		pnlUniNoise.add(rdbtnUniformNoise);
 		pnlUniNoise.add(txtUniK);
 		panel_1.add(pnlUniNoise);
 
 
-		JRadioButton rdbtnImpulseNoise = new JRadioButton("Imp noise");
-		JPanel pnlImpNoise = new JPanel();
+		final JRadioButton rdbtnImpulseNoise = new JRadioButton("Imp noise");
+		final JPanel pnlImpNoise = new JPanel();
 		pnlImpNoise.setLayout(new GridLayout(1, 2));
-		JTextField txtImpDns = new JTextField();
+		final JTextField txtImpDns = new JTextField();
 		pnlImpNoise.add(rdbtnImpulseNoise);
 		pnlImpNoise.add(txtImpDns);
 		panel_1.add(pnlImpNoise);

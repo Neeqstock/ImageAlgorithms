@@ -5,6 +5,12 @@ import maths.FilterMaths;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
+/**
+ * 
+ * @see filterObjects.NagaoMatsuyama
+ *
+ */
+
 public class AlgNagao implements IAlgorithm {
 
 	private NagaoMatsuyama filter = new NagaoMatsuyama();

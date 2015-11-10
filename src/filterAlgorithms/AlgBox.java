@@ -5,6 +5,11 @@ import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterObjects.Box;
 
+/**
+ * 
+ * @see filterObjects.Box
+ *
+ */
 public class AlgBox implements IAlgorithm {
 	
 	private Box filter = new Box();

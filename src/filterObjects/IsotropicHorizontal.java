@@ -2,6 +2,11 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * horizontal kernel for the isotropic (edge detection) filter
+ * 
+ */
+
 public class IsotropicHorizontal extends AFilter {
 	
 	public IsotropicHorizontal() {

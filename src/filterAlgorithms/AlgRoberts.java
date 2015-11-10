@@ -6,6 +6,12 @@ import filterObjects.RobertsY;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
+/**
+ * 
+ * @see filterObjects.RobertsX 
+ * @see filterObjects.RobertsY
+ *
+ */
 public class AlgRoberts implements IAlgorithm {
 	
 	private RobertsX robertsX = new RobertsX();

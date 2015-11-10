@@ -2,6 +2,10 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * vertical kernel for the isotropic (edge detection) filter
+ *
+ */
 public class SobelVertical extends AFilter {
 	
 	public SobelVertical() {

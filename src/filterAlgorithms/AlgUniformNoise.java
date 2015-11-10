@@ -5,6 +5,12 @@ import java.util.Random;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
+/**
+ * adds uniform noise to the image, affecting all pixels.
+* if k (maximum noise value) is not given, it is equal to 10 
+* (to better see the result)
+*
+*/
 public class AlgUniformNoise implements IAlgorithm {
 
 	private double k;

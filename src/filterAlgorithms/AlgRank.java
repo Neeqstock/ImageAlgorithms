@@ -5,6 +5,13 @@ import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterObjects.Rank;
 
+/**
+ * 
+ * @see filterObjects.Rank
+ *
+ * note: here Median filter is considered as a subcase of Rank
+ *
+ */
 public class AlgRank implements IAlgorithm {
 	private Rank filter;
 

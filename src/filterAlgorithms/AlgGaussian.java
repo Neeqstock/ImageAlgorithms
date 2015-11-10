@@ -5,6 +5,11 @@ import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterObjects.Gaussian;
 
+/**
+ * 
+ * @see filterObjects.Gaussian
+ *
+ */
 public class AlgGaussian implements IAlgorithm {
 	
 	private Gaussian filter = new Gaussian();
@@ -18,7 +23,6 @@ public class AlgGaussian implements IAlgorithm {
 		filteredImage.setPixels(intArray);
 		
 		PGMUtilities.writePGM(filteredImage, PGMUtilities.standardOutputPath + name + "_gaussian.pgm");
-		// ciaoooasdoo
 	}
 
 }

@@ -1,6 +1,13 @@
 package filterObjects;
 
 import pgm_utilities.PGMImage;
+ 
+/**
+ * This filter selects for the central 
+ * pixel the average for the orientation with the least variation.
+ * Ones the subgroup with the lowest variance is found, its mean becomes the new value of the central pixel.
+ *
+ */
 
 public class NagaoMatsuyama extends AFilter {
 	

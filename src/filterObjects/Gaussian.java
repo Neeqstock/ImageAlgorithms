@@ -2,6 +2,13 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * applies a Gaussian filter on the image using a 5X5 kernel.
+ * The result is a smoothed image
+ * mean and variance are given
+ *
+ */
+
 public class Gaussian extends AFilter {
 	
 	public Gaussian() {

@@ -5,6 +5,11 @@ import java.util.Random;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
+/**
+ * adds Impulsive noise to the image, affecting a given amount of pixel.
+ * if density is not given, it is equal to 0,05 (5%)
+ *
+ */
 public class AlgImpulseNoise implements IAlgorithm{
 
 private double density;

@@ -2,6 +2,13 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
+/**
+ * applies a 3/9 operator filter.
+ * each pixel is computed using the formula p = (3/2) * ((max / sum) - 1/3), 
+ * where sum is the sum of the values of the 3X3 image kernel, and max is the maximum
+ * among the 8 considered kernels.
+ * 
+ */
 public class ThreeNine extends AFilter {
 
 	public ThreeNine() {
@@ -75,9 +82,9 @@ public class ThreeNine extends AFilter {
 				if (sum == 0) {
 					p = 0;
 				}
-				if (p < threshold) {
-					p = 0;
-				}
+		//		if (p < threshold) {
+		//			p = 0;
+		//		}
 				filteredArray[i * columns + j] = p;
 			}
 		}

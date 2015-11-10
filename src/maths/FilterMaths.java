@@ -10,6 +10,15 @@ import filterObjects.NagaoMatsuyama;
  */
 public class FilterMaths {
 
+	/**
+	 * convolution of the whole image for 2X2 kernel (Roberts)
+	 * 
+	 * @param kernel the values of the filter
+	 * @param img the values of the image (pixels)
+	 * @param rows number of rows (height)
+	 * @param columns number of columns (width)
+	 * @return final values (pixels) of the convolution
+	 */
 	public static double[] totalConvolution2(double[] kernel, int[] img,
 			int rows, int columns) {
 
@@ -32,6 +41,15 @@ public class FilterMaths {
 
 	}
 
+	/**
+	 * convolution of the whole image for 3X3 kernel
+	 * 
+	 * @param kernel the values of the filter
+	 * @param img the values of the image (pixels)
+	 * @param rows number of rows (height)
+	 * @param columns number of columns (width)
+	 * @return final values (pixels) of the convolution
+	 */
 	public static double[] totalConvolution3(double[] kernel, int[] img,
 			int rows, int columns) {
 
@@ -61,6 +79,15 @@ public class FilterMaths {
 		return convolutedDoubleImage;
 	}
 
+	/**
+	 * convolution of the whole image for 5X5 kernel (Nagao)
+	 * 
+	 * @param kernel the values of the filter
+	 * @param img the values of the image (pixels)
+	 * @param rows number of rows (height)
+	 * @param columns number of columns (width)
+	 * @return final values (pixels) of the convolution
+	 */
 	public static double[] totalConvolution5(double[] kernel, int[] img,
 			int rows, int columns) {
 
@@ -108,6 +135,14 @@ public class FilterMaths {
 		return convoluteImage;
 	}
 
+	/**
+	 * convolution of the whole image for the Nagao Filter
+	 * 
+	 * @param img the values of the image (pixels)
+	 * @param rows number of rows (height)
+	 * @param columns number of columns (width)
+	 * @return final values (pixels) of the convolution
+	 */
 	public static double[] totalNagao(int[] img, int rows, int columns) {
 
 		double[] convoluteImage = new double[img.length];
@@ -230,6 +265,13 @@ public class FilterMaths {
 		return convoluteImage;
 	}
 
+	/**
+	 * computes the variance of the given section of image, given a kernel
+	 * 
+	 * @param kernel filter kernel
+	 * @param kernelledImage image kernel
+	 * @return variance of the image
+	 */
 	private static double getVarianceFromKernel(double[] kernel,
 			double[] kernelledImage) {
 
@@ -241,6 +283,15 @@ public class FilterMaths {
 		return variance;
 	}
 
+	/**
+	 * computes the module of an image (Sobel, Prewitt, Roberts...)
+	 * 
+	 * @param horPixels horizontal pixels
+	 * @param verPixels vertical pixels
+	 * @param width
+	 * @param heigth
+	 * @return the module of the image
+	 */
 	public static double[] getModule(double[] horPixels, double[] verPixels,
 			int width, int heigth) {
 
@@ -254,6 +305,15 @@ public class FilterMaths {
 		return doubleResult;
 	}
 
+	/**
+	 * computes the phase of the image
+	 * 
+	 * @param horPixels horizontal pixels
+	 * @param verPixels vertical pixels
+	 * @param width
+	 * @param heigth
+	 * @return the phase of the image
+	 */
 	public static double[] getPhase(double[] horPixels, double[] verPixels,
 			int width, int heigth) {
 
@@ -266,6 +326,13 @@ public class FilterMaths {
 		return doubleResult;
 	}
 
+	/**
+	 * given a set of values in a uncorrect range,
+	 * this function corrects the values between 0-255
+	 * 
+	 * @param convoluted values of the pixels
+	 * @return the corrected values of the image
+	 */
 	public static int[] mapping(double[] convoluted) {
 		double max = convoluted[0];
 		double min = convoluted[0];
@@ -284,29 +351,37 @@ public class FilterMaths {
 		double outputMin = 0;
 
 		for (int i = 0; i < output.length; i++) {
-			double tmp = ((outputMax - outputMin) / (max - min))
-					* (convoluted[i] - min);
+			double tmp = ((outputMax - outputMin) / (max - min)) * (convoluted[i] - min);
 			output[i] = (int) tmp;
 		}
 		return output;
 	}
 
+	/**
+	 * computes convolution on the image kernel
+	 * 
+	 * @param kernel kernel of the filter
+	 * @param img kernel of the image
+	 * @return the convolution value
+	 */
 	private static double convolution(double[] kernel, double[] img) {
 
-		// si suppone che vengano passati kernel e imagini di dimensioni giuste
-
 		int r = img.length;
-
 		double conv = 0;
 
 		for (int i = 0; i < r; i++) {
 			conv = conv + (kernel[i] * img[i]);
 		}
 
-		// si suppone quasi sempre vero if((rows>=3) & (columns >=3)){}
 		return conv;
 	}
 
+	/**
+	 * cast a double array to an int array
+	 * 
+	 * @param inputArray
+	 * @return
+	 */
 	public static int[] castDoubleToIntArray(double[] inputArray) {
 		int[] output = new int[inputArray.length];
 
@@ -317,6 +392,14 @@ public class FilterMaths {
 		return output;
 	}
 
+	/**
+	 * converts an array into a matrix
+	 * 
+	 * @param array
+	 * @param width
+	 * @param height
+	 * @return
+	 */
 	public static int[][] arrayToMatrix(int[] array, int width, int height) {
 		int[][] result = new int[height][width];
 
@@ -332,6 +415,16 @@ public class FilterMaths {
 		return result;
 	}
 
+	/**
+	 * computes the convolution (on the total image) whit a generic matrix
+	 * 
+	 * 
+	 * @param kernel
+	 * @param imageMatrix
+	 * @param width
+	 * @param height
+	 * @return
+	 */
 	public static double[][] genericTotalConvolution(double[][] kernel,
 			int[][] imageMatrix, int width, int height) {
 
@@ -372,6 +465,13 @@ public class FilterMaths {
 		return result;
 	}
 
+	/**
+	 * maximize contrast
+	 * 
+	 * @param pixels
+	 * @param maxVal
+	 * @return
+	 */
 	public static int[] maximizeContrast(int[] pixels, int maxVal) {
 		int mediumVal = maxVal / 2;
 		int[] result = new int[pixels.length];
@@ -385,6 +485,13 @@ public class FilterMaths {
 		return result;
 	}
 
+	/**
+	 * converts a matrix into an array
+	 * @param matrix
+	 * @param width
+	 * @param height
+	 * @return
+	 */
 	public static double[] matrixToVector(double[][] matrix, int width,
 			int height) {
 		double[] result = new double[width * height];
@@ -398,6 +505,15 @@ public class FilterMaths {
 		return result;
 	}
 
+	/**
+	 * utility for the Rank filter
+	 * 
+	 * @param img
+	 * @param rows
+	 * @param columns
+	 * @param rankDimension
+	 * @return
+	 */
 	public static double[] rank(int[] img, int rows, int columns,
 			int rankDimension) {
 

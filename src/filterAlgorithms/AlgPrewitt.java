@@ -6,6 +6,13 @@ import pgm_utilities.PGMUtilities;
 import filterObjects.PrewittHorizontal;
 import filterObjects.PrewittVertical;
 
+/**
+ * 
+ * @see filterObjects.PrewittHorizontal
+ * @see filterObjects.PrewittVertical
+ *
+ */
+
 public class AlgPrewitt implements IAlgorithm {
 	
 	private PrewittHorizontal prewHor = new PrewittHorizontal();

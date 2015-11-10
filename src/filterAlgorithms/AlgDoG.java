@@ -8,6 +8,11 @@ import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 import filterObjects.DoG;
 
+/**
+ * 
+ * @see filterObjects.DoG
+ *
+ */
 public class AlgDoG implements IAlgorithm {
 
 	private DoG filter;
