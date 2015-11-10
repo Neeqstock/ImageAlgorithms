@@ -1,6 +1,7 @@
 package user_interface;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -9,7 +10,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
-import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -26,6 +26,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MainFrame extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Engine engine;
 	private JList<String> fileList = new JList<String>();
@@ -51,11 +55,12 @@ public class MainFrame extends JFrame implements ActionListener {
 	 */
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 654, 312);
+		setSize(new Dimension(1000,300));
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
+		contentPane.setLayout(new GridLayout(1,3));
 
 		engine = new Engine();
 
@@ -112,7 +117,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		final JRadioButton rdbtnRank = new JRadioButton("Rank");
 		String[] rankNumbers = {"1", "3", "5", "7", "9"};
-		final JComboBox cbboxRank = new JComboBox(rankNumbers);
+		final JComboBox<String> cbboxRank = new JComboBox<String>(rankNumbers);
 		cbboxRank.setSelectedIndex(0);
 		JPanel pnlRank = new JPanel();
 		pnlRank.setLayout(new GridLayout(1, 2));

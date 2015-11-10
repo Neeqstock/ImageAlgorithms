@@ -2,7 +2,6 @@ package filterAlgorithms;
 
 import java.util.Random;
 
-import filterObjects.DoG;
 import pgm_utilities.PGMImage;
 import pgm_utilities.PGMUtilities;
 
