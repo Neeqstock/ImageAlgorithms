@@ -121,7 +121,8 @@ public class Engine {
 		// StringTokenizer tokenizer = new StringTokenizer()
 		File file = new File(filepath);
 		String gesu = file.getName();
-		gesu.replaceAll(".pgm", "");
+		gesu = gesu.replaceAll(".pgm", " ");
+		System.err.println(gesu);
 		return gesu;
 	}
 
