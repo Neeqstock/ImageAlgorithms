@@ -2,7 +2,7 @@ package filterObjects;
 
 import pgm_utilities.PGMImage;
 
-/*
+/**
  * applies the sharpening filter, augmenting the contrast in the image
  */
 

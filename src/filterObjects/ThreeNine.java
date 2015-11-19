@@ -80,7 +80,7 @@ public class ThreeNine extends AFilter {
 //				double threshold = (1d - tau)/((2d*tau) + 1d);
 								
 				double p = (1.5d) * ((max / sum) - (1d/3d));
-				if ((sum == 0) || (sum < threshold)) {
+				if ((sum == 0)) {
 		//			System.out.println("sum   "+ sum + "  threshold  "+ threshold);
 					p = 0;
 				}
