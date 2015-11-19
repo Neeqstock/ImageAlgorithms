@@ -27,9 +27,6 @@ public class Box extends AFilter {
 	public double[] getFilteredImage(PGMImage image) {
 		int[] pixelArray = image.getPixels();
 		double[] filteredArray = super.computeFilter3(pixelArray, image.getHeight(), image.getWidth());
-		System.out.println("kernel value: " + kernel[0]);
 		return filteredArray;
-	}
-	
-	
+	}	
 }

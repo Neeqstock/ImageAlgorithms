@@ -122,7 +122,6 @@ public class Engine {
 		File file = new File(filepath);
 		String gesu = file.getName();
 		gesu = gesu.replaceAll(".pgm", " ");
-		System.err.println(gesu);
 		return gesu;
 	}
 

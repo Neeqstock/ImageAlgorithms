@@ -11,7 +11,6 @@ public class EdgeExtractor {
 			int maxVal) {
 		UnitaryKernel filter = new UnitaryKernel();
 		int mediumVal = maxVal / 2;
-		System.out.println(mediumVal);
 		int[] result = new int[pixels.length];
 		
 		for (int i = 0; i < pixels.length; i++) {
@@ -28,14 +27,12 @@ public class EdgeExtractor {
 		int[] finalResult = new int[result.length];
 
 		for (int i = 0; i < intermediate.length; i++) {
-			System.out.println(intermediate[i]);
 			if (intermediate[i] > 7 || intermediate[i] < 2) {
 				finalResult[i] = 0;
 			} else {
 				finalResult[i] = 255;
 			}
 		}
-		System.out.println(mediumVal);
 	return finalResult;
 	}
 }

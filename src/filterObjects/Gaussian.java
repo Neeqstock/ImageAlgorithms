@@ -44,7 +44,6 @@ public class Gaussian extends AFilter {
 	public double[] getFilteredImage(PGMImage image) {
 		int[] pixelArray = image.getPixels();
 		double[] filteredArray = super.computeFilter5(pixelArray, image.getHeight(), image.getWidth());
-		System.out.println("kernel value: " + kernel[0]);
 		return filteredArray;
 	}
 	

@@ -1,6 +1,7 @@
 package maths;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import filterObjects.NagaoMatsuyama;
 /**
@@ -405,10 +406,6 @@ public class FilterMaths {
 
 		for (int rowFlag = 0; rowFlag < height; rowFlag++) {
 			for (int colFlag = 0; colFlag < width; colFlag++) {
-				// System.out.println("width : " + width + "; heigth : " +
-				// height
-				// + "; RowFlag = " + rowFlag + "; ColFlag = " + colFlag
-				// + "; arrayPos = " + (rowFlag * width) + colFlag);
 				result[rowFlag][colFlag] = array[(rowFlag * width) + colFlag];
 			}
 		}
@@ -525,15 +522,17 @@ public class FilterMaths {
 				double[] kernelledImage = new double[9];
 
 				kernelledImage[0] = img[(i - 1) * columns + (j - 1)];
-				kernelledImage[3] = img[(i - 1) * columns + (j)];
-				kernelledImage[6] = img[(i - 1) * columns + (j + 1)];
-				kernelledImage[1] = img[(i) * columns + (j - 1)];
+				kernelledImage[1] = img[(i - 1) * columns + (j)];
+				kernelledImage[2] = img[(i - 1) * columns + (j + 1)];
+				kernelledImage[3] = img[(i) * columns + (j - 1)];
 				kernelledImage[4] = img[(i) * columns + (j)];
-				kernelledImage[7] = img[(i) * columns + (j + 1)];
-				kernelledImage[2] = img[(i + 1) * columns + (j - 1)];
-				kernelledImage[5] = img[(i + 1) * columns + (j)];
+				kernelledImage[5] = img[(i) * columns + (j + 1)];
+				kernelledImage[6] = img[(i + 1) * columns + (j - 1)];
+				kernelledImage[7] = img[(i + 1) * columns + (j)];
 				kernelledImage[8] = img[(i + 1) * columns + (j + 1)];
 
+				Arrays.sort(kernelledImage);
+							
 				double value;
 
 				switch (rankDimension) {

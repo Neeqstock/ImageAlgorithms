@@ -17,7 +17,8 @@ public class AlgRank implements IAlgorithm {
 
 	@Override
 	public void computeImage(PGMImage image, String name, String[] args) {
-		filter = new Rank(Integer.parseInt(args[0]));
+		int typeOfRank = Integer.parseInt(args[0]);
+		filter = new Rank(typeOfRank);
 		double[] filteredArray = filter.getFilteredImage(image);
 		int[] pixels = FilterMaths.mapping(filteredArray);
 		
@@ -25,6 +26,6 @@ public class AlgRank implements IAlgorithm {
 		resultImage.setPixels(pixels);
 
 		PGMUtilities.writePGM(resultImage, PGMUtilities.standardOutputPath + name
-				+ "_Rank.pgm");
+				+ "_Rank"+ typeOfRank +".pgm");
 	}
 }

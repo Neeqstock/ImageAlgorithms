@@ -117,8 +117,6 @@ public class DoG extends AFilter {
 	private int[] getAbscissaVector(int kernelDimension) {
 		int[] abscissa = new int[kernelDimension];
 		int startingZero = -((kernelDimension - 1) / 2);
-		System.out.println("startingZero: " + startingZero
-				+ " on a kernelDimension: " + kernelDimension);
 		abscissa[0] = startingZero;
 		for (int i = 1; i < kernelDimension - 1; i++) {
 			abscissa[i] = abscissa[i - 1] + 1;

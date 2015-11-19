@@ -187,8 +187,6 @@ public class MainFrame extends JFrame implements ActionListener {
 				chooser.setFileFilter(filter);
 				int returnVal = chooser.showOpenDialog(MainFrame.this);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
-					System.out.println("woooo. "
-							+ chooser.getSelectedFile().getName());
 					listModel.addElement(chooser.getSelectedFile()
 							.getAbsolutePath());
 				}
